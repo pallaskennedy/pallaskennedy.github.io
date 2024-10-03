@@ -11,35 +11,36 @@
         <title>
             Cafe Menu
         </title>
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/cafe_menu_styling.css">
     
     </head>
     <body id="coffee">
-        <div  class="menu">
-        <main>
+    
+        <header>
             <hr />
-    <br />
-            <p>
-                This webpage is a product of a tutorial exercise from
-                <a
-                  href="https://www.freecodecamp.org/learn/2022/responsive-web-design/"
-                  target="_blank"
-                  >FreeCodeCamp.org</a
-                >. All content and structure were built following their course as part of
-                my learning journey in responsive web design.
-              </p>
-              <br /><hr />
-                 <h1>THE DAILY GRIND</h1>
-            <H2>Coffee and Dessert Caf&#233;</H2>
-            <p class='established'>Est. 2020</p>
-            <hr>
-            <section>
-                <h2>Coffee</h2>
-                <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg" alt="coffee icon">
-                <!-- The <article> element is used to semantically group each coffee 
+            <br />
+            This webpage is a product of a tutorial exercise from
+            <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/" target="_blank">
+                FreeCodeCamp.org
+            </a>. All content and structure were built following their course as part of
+            my learning journey in responsive web design.
+            <br />
+            <hr />
+        </header>
+        <nav aria-label="Main navigation"></nav>
+        <div  class="menu"></div>
+            <main>
+                <h1>THE DAILY GRIND</h1>
+                <H2>Coffee and Dessert Caf&#233;</H2>
+                <p class='established'>Est. 2020</p>
+                <hr> 
+                <section>
+                    <h2>Coffee</h2>
+                    <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg" alt="coffee icon">
+                    <!-- The <article> element is used to semantically group each coffee 
                     and price pair as standalone content. This improves accessibility 
                     and allows for easy styling and manipulation with CSS. -->
-                <!-- Normally, whitespace between <p> tags is ignored. 
+                    <!-- Normally, whitespace between <p> tags is ignored. 
                     However, using display: inline-block causes the whitespace to be rendered, 
                     resulting in gaps between the elements. Placing elements on the same line 
                     removes this extra space. -->
@@ -59,34 +60,31 @@
                         <p class="flavor">Mocha</p><p class="price">4.50</p>
                     </article>
 
-            </section>
-            <section>
-                <h2>Dessert</h2>
-                <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg" alt="pie icon">
-                <article class="item">
-                    <p class="dessert">Donut</p><p class="price">1.50</p>
-                <article class="item">
-                    <p class="dessert">Donut</p><p class="price">1.50</p>
-                </article>
-                <article>
-                    <p class="dessert">Cherry Pie</p><p class="price">2.75</p>
-                </article>
-                <article>
-                    <p class="dessert">Cheesecake</p><p class="price">3.00</p>
-                </article>
-                <article>
-                    <p class="dessert">Cinnamon Roll</p><p class="price">2.50</p>            
-                </article>
-
-            </section>
-
-        </main>
-        
-        <hr class="bottom-line">
-        <footer>
-            <p> <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a></p>
-            <p class="address">123 Free Code Camp Drive</p>
-        </footer>
+                </section>
+                <section>
+                    <h2>Dessert</h2>
+                    <img src="https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg" alt="pie icon">
+                    <article class="item">
+                        <p class="dessert">Donut</p><p class="price">1.50</p>
+                    <article class="item">
+                        <p class="dessert">Donut</p><p class="price">1.50</p>
+                    </article>
+                    <article>
+                        <p class="dessert">Cherry Pie</p><p class="price">2.75</p>
+                    </article>
+                    <article>
+                        <p class="dessert">Cheesecake</p><p class="price">3.00</p>
+                    </article>
+                    <article>
+                        <p class="dessert">Cinnamon Roll</p><p class="price">2.50</p>            
+                    </article>
+                </section>
+            </main>
+            <hr class="bottom-line">
+            <footer>
+                <p> <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a></p>
+                <p class="address">123 Free Code Camp Drive</p>
+            </footer>
         </div>
     </body>
     

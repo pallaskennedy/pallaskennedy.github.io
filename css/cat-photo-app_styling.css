@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: black;
+}
+
+a:active {
+  color: white; /* should turn white while clicking*/
+}
+
+a:hover {
+  color: brown; /* should turn brown on mouseover*/
+}
+
+a:visited {
+  color: grey; /* should turn grey after click */
+}
+
+footer {
+  font-size: 14px;
+}
+
+h1,
+h2,
+p {
+  text-align: center;
+}
+
+h1,
+h2 {
+  font-family: "Chalkduster", Fantasy, Impact, Haettenschweiler,
+    "Arial Narrow Bold", sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figcaption {
+  text-align: center;
+}
+
+#cats {
+  background-color: burlywood;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  width: 80%;
+}
+
+hr {
+  background-color: rgb(128, 64, 0);
+  border-color: rgb(128, 64, 0);
+  height: 2px;
+}
+
+.address {
+  margin-bottom: 5px;
+}
+
+.bottom-line {
+  margin-top: 25px;
+}

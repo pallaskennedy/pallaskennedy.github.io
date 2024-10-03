@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <meta
+      name="description"
+      content="A registration form tutorial exercise for responsive 
+    web design, part of my learning journey on FreeCodeCamp."
+    />
+    <meta
+      name="keywords"
+      content="registration form, responsive web design, 
+    HTML, CSS, tutorial, FreeCodeCamp"
+    />
     <meta name="author" content="FreeCodeCamp.org" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration Form</title>
     <link rel="stylesheet" href="css/form_styles.css" />
   </head>
   <body>
-    <hr />
-    <br />
-    <p>
-      This webpage is a product of a tutorial exercise from
-      <a
-        href="https://www.freecodecamp.org/learn/2022/responsive-web-design/"
-        target="_blank"
-        >FreeCodeCamp.org</a
-      >. All content and structure were built following their course as part of
-      my learning journey in responsive web design.
-    </p>
-    <br />
-    <hr />
-    <h1>Registration Form</h1>
-    <p>Please fill out this form with the required information</p>
-    <!--The method attribute specifies how to send form-data to the URL specified 
+    <header>
+      <hr />
+      <br />
+      <p>
+        This webpage is a product of a tutorial exercise from
+        <a
+          href="https://www.freecodecamp.org/learn/2022/responsive-web-design/"
+          target="_blank"
+          >FreeCodeCamp.org</a
+        >. All content and structure were built following their course as part
+        of my learning journey in responsive web design.
+      </p>
+      <br />
+      <hr />
+    </header>
+    <nav aria-label="Main navigation"></nav>
+    <main>
+      <h1>Registration Form</h1>
+      <p>Please fill out this form with the required information</p>
+      <!--The method attribute specifies how to send form-data to the URL specified 
     in the action attribute. The form-data can be sent via a GET request as URL
      parameters (with method="get") or via a POST request as data in the request 
      body (with method="post").
@@ -42,100 +54,103 @@
      Even stronger is the regex: pattern=[a-z0-5]{8,}  which states the password
      must contain lowercase letters a to z, digits 0 to 5 and be 8 chars in length.
      -->
-    <form action="https://register-demo.freecodecamp.org" method="POST">
-      <fieldset>
-        <label for="first-name"
-          >Enter Your First Name:
-          <input id="first-name" name="first_name" type="text" required />
-        </label>
+      <form action="https://register-demo.freecodecamp.org" method="POST">
+        <fieldset>
+          <label for="first-name"
+            >Enter Your First Name:
+            <input id="first-name" name="first_name" type="text" required />
+          </label>
 
-        <label for="last-name"
-          >Enter Your Last Name:
-          <input id="last-name" name="last_name" type="text" required />
-        </label>
+          <label for="last-name"
+            >Enter Your Last Name:
+            <input id="last-name" name="last_name" type="text" required />
+          </label>
 
-        <label for="email"
-          >Enter Your Email:
-          <input id="email" name="email" type="email" required />
-        </label>
+          <label for="email"
+            >Enter Your Email:
+            <input id="email" name="email" type="email" required />
+          </label>
 
-        <label for="new-password"
-          >Create a New Password:
+          <label for="new-password"
+            >Create a New Password:
+            <input
+              id="new-password"
+              name="password"
+              pattern="[a-z0-5]{8,}"
+              type="password"
+              required
+            />
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Account type (required)</legend>
+          <label for="personal-account"
+            ><input
+              class="inline"
+              id="personal-account"
+              name="account-type"
+              type="radio"
+              checked
+            />
+            Personal</label
+          >
+          <label for="business-account"
+            ><input
+              class="inline"
+              id="business-account"
+              name="account-type"
+              type="radio"
+            />
+            Business</label
+          >
+        </fieldset>
+        <fieldset>
+          <label for="profile-picture"
+            >Upload a profile picture:
+            <input id="profile-picture" name="profile_picture" type="file"
+          /></label>
+          <label for="age"
+            >Input your age (years):
+            <input id="age" name="age" max="120" min="13" type="number"
+          /></label>
+          <label for="referrer"
+            >How did you hear about us?
+            <select id="referrer" name="referral-source">
+              <option value="">(select one)</option>
+              <option value="1">freeCodeCamp News</option>
+              <option value="2">freeCodeCamp YouTube Channel</option>
+              <option value="3">freeCodeCamp Forum</option>
+              <option value="4">Other</option>
+            </select>
+          </label>
+          <label for="bio"
+            >Provide a bio:
+            <textarea
+              cols="30"
+              id="bio"
+              name="bio"
+              placeholder="I like coding on the beach..."
+              rows="3"
+            ></textarea>
+          </label>
+        </fieldset>
+        <label for="terms-and-conditions">
           <input
-            id="new-password"
-            name="password"
-            pattern="[a-z0-5]{8,}"
-            type="password"
+            class="inline"
+            id="terms-and-conditions"
+            name="terms_and_conditions"
+            type="checkbox"
             required
           />
+          I accept the
+          <a href="https://www.freecodecamp.org/news/terms-of-service/"
+            >terms and conditions</a
+          >
         </label>
-      </fieldset>
-
-      <fieldset>
-        <legend>Account type (required)</legend>
-        <label for="personal-account"
-          ><input
-            class="inline"
-            id="personal-account"
-            name="account-type"
-            type="radio"
-            checked
-          />
-          Personal</label
-        >
-        <label for="business-account"
-          ><input
-            class="inline"
-            id="business-account"
-            name="account-type"
-            type="radio"
-          />
-          Business</label
-        >
-      </fieldset>
-      <fieldset>
-        <label for="profile-picture"
-          >Upload a profile picture:
-          <input id="profile-picture" name="profile_picture" type="file"
-        /></label>
-        <label for="age"
-          >Input your age (years):
-          <input id="age" name="age" max="120" min="13" type="number"
-        /></label>
-        <label for="referrer"
-          >How did you hear about us?
-          <select id="referrer" name="referral-source">
-            <option value="">(select one)</option>
-            <option value="1">freeCodeCamp News</option>
-            <option value="2">freeCodeCamp YouTube Channel</option>
-            <option value="3">freeCodeCamp Forum</option>
-            <option value="4">Other</option>
-          </select>
-        </label>
-        <label for="bio"
-          >Provide a bio:
-          <textarea
-            cols="30"
-            id="bio"
-            name="bio"
-            placeholder="I like coding on the beach..."
-            rows="3"
-          ></textarea>
-        </label>
-      </fieldset>
-      <label for="terms-and-conditions">
-        <input
-          id="terms-and-conditions"
-          name="terms_and_conditions"
-          type="checkbox"
-          required
-        />
-        I accept the
-        <a href="https://www.freecodecamp.org/news/terms-of-service/"
-          >terms and conditions</a
-        >
-      </label>
-      <input type="submit" name="submit" value="Submit" />
-    </form>
+        <input type="submit" name="submit" value="Submit" />
+      </form>
+    </main>
+    <footer></footer>
   </body>
 </html>

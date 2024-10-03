@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--In the head of the page:
+    meta tags, title, link to css, link to JS, favicon, links to fonts and icon libraries, canonical tags, 
+    preload/prefetch data-->
+
+    <!--Basic Meta Tags-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--sets the color of the browser’s toolbar on mobile devices-->
+    <meta name="theme-color" content="#4285f4" />
+
+    <!--SEO Optimization Meta Tags-->
+    <meta
+      name="description"
+      content="A brief summary of the page's content, often shown in search engine results"
+    />
+    <meta
+      name="keywords"
+      content="Important keywords related to the page, though most modern 
+    search engines no longer use this"
+    />
+    <link rel="canonical" href="https://www.example.com/" />
+    <meta name="robots" content="index, follow" />
+    <!--
+            •	index: Tells search engines like Google that they should include this page in their search results. 
+                If someone searches for a topic relevant to your page, it might appear in the search engine’s results.
+            •	noindex: Tells search engines not to include this page in their search results. The page still exists, 
+                but search engines won’t show it to users. You might use this if you don’t want certain pages, like a 
+                login page, to appear in search results.
+            •	follow:Tells search engines that they should crawl and explore all the links on this page. This means 
+                the search engine will visit the other pages that these links point to and might include those linked 
+                pages in search results. It’s the default behavior for most pages.
+            •	nofollow: Tells search engines not to crawl or explore the links on this page. Even though users can still
+                click the links, the search engines won’t give those links any ranking power (SEO value). This is often 
+                used on pages with paid links or comments sections to prevent search engines from associating your site 
+                with potentially harmful or irrelevant content.
+    -->
+    <!--Creator Meta Tags-->
+    <meta name="author" content="Author Name" />
+    <meta name="generator" content="Tool used to generate the site" />
+
+    <!--Open Graph Meta Tags: how your site looks if someone shares it on Facebook or LinkedIn-->
+    <meta property="og:title" content="Title of the webpage" />
+    <meta property="og:description" content="Description of the webpage" />
+    <meta property="og:image" content="URL of the image" />
+    <meta property="og:url" content="URL of the page" />
+    <meta property="og:type" content="website" />
+
+    <!--Twitter Meta Tags: How your site looks if someone shares it on Twitter-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Title of the page" />
+    <meta name="twitter:description" content="Description of the page" />
+    <meta name="twitter:image" content="URL of the image" />
+
+    <!--Rendering Meta Tags-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="refresh" content="30" />
+
+    <!--Security Meta Tags-->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://apis.google.com"
+    />
+
+    <title>This shows up on the tab</title>
+    <link rel="stylesheet" href="css/sample_styles.css" />
+    <!--adding defer or async to your JavaScript link optimizes page loading -->
+    <script src="script.js" defer></script>
+    <link rel="icon" href="favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <link rel="preload" href="important-resource.js" as="script" />
+    <link rel="prefetch" href="next-page.html" />
+  </head>
+  <body>
+    <header>
+      This section is like the room where you introduce people to the house (the
+      site), possibly with a welcome mat, logo, or some initial information.
+    </header>
+    <nav aria-label="Main navigation">
+      This is like the hallway or the set of doorways that let people move
+      around the house (the website). If it's convenient, the navigation can be
+      inside the header room, but it could also have its own space. ARIA
+      landmarks or descriptive labels (like aria-label or aria-labelledby) can
+      improve accessibility for screen readers.
+    </nav>
+    <nav aria-label="Breadcrumb">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/section">Section</a></li>
+        <li><a href="/section/page">Page</a></li>
+      </ul>
+    </nav>
+    <main>
+      • The “living room” of the page, which contains the most important
+      content. • The main content area where the primary focus of the page is
+      displayed, such as articles, forms, or other interactive content.
+
+      <section>
+        • The “room dividers” inside the main content. • Organizes content into
+        distinct sections with related information. For example, on a blog page,
+        you could have different sections for the blog post, related articles,
+        and comments.
+        Purpose: Used to group related content thematically. A <section> typically 
+          contains a heading and represents a standalone portion of content that is 
+          thematically related.
+          •	Usage: Use a <section> when you want to create distinct parts of the 
+            content that share a common theme or subject matter.
+          •	Example: In a blog post, you might have a <section> for the introduction,
+            another for the main content, and a third for the conclusion.
+
+            Use <section>, <article></article>and <p> for organizing textual content 
+              with meaning and context, much like paragraphs in an essay.
+      </section>
+      <article>
+        • A “self-contained room” or “apartment” for individual content items. •
+        Used for standalone content, like blog posts, news articles, or
+        user-submitted content.
+        Purpose: Represents a self-contained piece of content that could stand alone, 
+        such as a blog post, news article, or user-submitted content. It usually includes
+         its own title and is meant to be distributable or syndicateable.
+        •	Usage: Use an <article> when the content is independently meaningful and could
+           be published on its own, or when it makes sense to reference it outside of the 
+           surrounding context.
+        •	Example: Each blog post on a blog page can be wrapped in an <article>.
+      </article>
+      <aside>
+        • The “sidebar” or “storage room” for secondary information. • Holds
+        supplementary content related to the main content but not part of it,
+        such as ads, additional links, or author bio information.
+      </aside>
+      <div>
+        • The “generic room” or “flex space.” • A versatile container that is
+        used to group other elements together, often for layout purposes or
+        styling. It doesn't carry any semantic meaning by itself but helps with
+        structure.
+        Purpose: A generic container used for grouping elements without any semantic 
+        meaning. It's primarily used for styling and layout purposes.
+      •	Usage: Use a <div> when there is no suitable semantic element to represent the content.
+        It's helpful for applying CSS styles or JavaScript functionality but does not provide 
+        meaning to the content itself.
+      •	Example: Wrapping multiple sections together for styling or organizational purposes.
+      Use <div> for grouping visual components or layout elements that don't have specific semantic 
+        meaning, much like organizing different parts of a drawing or design.
+
+      </div>
+      <form>
+        • The “office” or “workroom” where users interact. • Used for input,
+        such as user registrations, surveys, or logins.
+
+        you typically use a <fieldset> instead of a <section> when you are grouping related form elements. The <fieldset> element is specifically designed for forms to group inputs, making it clear that they belong to a particular section of the form. It also allows you to optionally use a <legend> element to label the group.
+
+          Here's a comparison:
+          
+          When to Use <fieldset>
+          
+            •	Group related form elements together (e.g., personal details, payment information).
+            •	Provide a visual boundary around the group of form inputs.
+            •	Use <legend> to give a label for the group.
+        When to Use <section>
+
+          •	<section> is used for grouping content that is thematically related on the page, but not specifically for forms.
+          •	It organizes large sections of the page, not just form elements.
+        
+
+          •	<fieldset>: Specifically for forms, helps group related inputs with an optional label (<legend>).
+            •	<section>: Used for broader page content, more general for organizing non-form content.
+          
+      </form>
+      <figure>
+        A “gallery room” used to group images, diagrams, and media.
+        <figcaption>provides a caption for that media</figcaption>
+      </figure>
+      <section>
+        The “decorations” within the rooms of your HTML structure are the
+        smaller elements like text, images, and links that add content and
+        visual detail. These elements don't define the overall layout but
+        provide the actual content users interact with. Here's a breakdown:
+        Common “Decorations” (Content Elements) in HTML Rooms: 1.
+        <h1>Headings</h1>
+        • Like “title signs” in different rooms. • Used to define headings or
+        subheadings in content. The h1 tag is the most important (main heading),
+        while h6 is the least important. 2.
+        <p>
+          Paragraphs • The “text” or “written notes” inside the room. • Used to
+          structure blocks of text in a readable way.
+        </p>
+        3. <a>Links</a> • The “doorways” to other rooms or external places. •
+        Used to create clickable links that direct users to other web pages,
+        sections, or even external resources. 4. Images (<img />) • The
+        “pictures” or “art on the walls.” • Used to embed images within the
+        content. 5. Lists • The “bulletin boards” or “to-do lists” in the room.
+        •
+        <ul>
+          <li>creates an unordered list (bulleted)</li>
+          <li>is the list item element</li>
+        </ul>
+        <ol>
+          <li>creates an ordered list (numbered).</li>
+          <li>is the list item element for both lists</li>
+        </ol>
+        6. <button>Buttons</button> • The “interactive switches” or
+        “call-to-action” areas. • Used for clickable buttons that submit forms
+        or perform other actions. 7. Input fields (<input />,
+        <textarea>textareas</textarea>,
+        <select>
+          selections</select
+        >) • The “form elements” or “user input devices.” • Allow users to enter
+        data, such as text, checkboxes, radio buttons, file uploads, or dropdown
+        options. 8. Bold and Italics • The “emphasis” or “highlighting” of
+        certain parts. • <b>visual bold</b> and <i>italic styling</i>, while
+        <strong>strong</strong> and <em>em</em> are used to emphasize importance
+        semantically. 9.
+        <blockquote>Blockquotes</blockquote>
+        • The “framed quotes” on the walls. • Used to display quoted text, often
+        from another source. 10. Line breaks (<br />) and Horizontal Rules (
+        <hr />
+        ) • The “dividers” or “spacers” in the room. • <br />
+        is for line breaks (used in text to create single-line breaks), and
+        <hr />
+        is for horizontal lines to visually separate content.
+      </section>
+    </main>
+    <footer>
+      • The “basement” or the foundation of the page. • Appears at the bottom
+      and typically contains copyright info, links to terms of service or
+      privacy policies, and contact details. If your site involves communication
+      with users, having a contact form or link in the footer (often common in
+      web design) can improve user experience.
+    </footer>
+    <script>
+      //internal JS is put just above the closing body tag to optimize performance
+    </script>
+  </body>
+</html>
