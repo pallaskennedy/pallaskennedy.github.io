@@ -1,0 +1,135 @@
+.frame {
+  width: 500px;
+
+  padding: 50px; /* put whitespace between black border and maroon background*/
+  border: 50px solid black;
+
+  margin: 20px auto; /* Vertical: 20px, Horizontal: auto; put a flexible whitespace outside the black border, centering it*/
+
+  /*total_width =  margin + border + padding + width + padding + border + margin */
+  /*total_height = margin + botder + padding + content height + padding + border + margin */
+  /* Outside In thinking */
+}
+
+.canvas {
+  background-color: #4d0f00;
+
+  height: 600px;
+  width: 500px;
+  filter: blur(2px);
+
+  /*padding: 1px; Give .one something solid to push off against but will change the overall size to 502x602*/
+  overflow: hidden; /*remove padding and set overflow to hidden to avoid changing the dimesions of the box*/
+}
+
+.one {
+  background-color: #efb762;
+
+  height: 125px;
+  width: 425px; /* 75/2 pixels on either side*/
+
+  margin: 20px auto; /* drop it 20px from the top and center horizontally in the maroon background */
+
+  box-shadow: 0 0 3px 3px #efb762;
+  border-radius: 9px; /*All 4 corners*/
+  transform: rotate(-0.6deg); /*CCW is neg, CW is pos*/
+  /* CSS uses a coordinate system where the origin (0,0) is the top-left corner of the element.
+	•	Angles are measured starting from the positive x-axis (to the right), moving counterclockwise. This means that in CSS:
+	•	0° is pointing right (positive x-axis).
+	•	90° is pointing down (positive y-axis).
+	•	180° is pointing left (negative x-axis).
+	•	270° is pointing up (negative y-axis).
+	•	Thus, a negative rotation moves in the opposite direction (counterclockwise). */
+}
+.two {
+  width: 475px;
+  height: 200px;
+  background-color: #8f0401;
+  margin: 0 auto 20px; /* It's helpful to have your margins push in one direction. */
+  box-shadow: 0 0 3px 3px #8f0401;
+  border-radius: 8px 10px; /* top-left and bottom right: 8px; top-right and bottom-left: 10px*/
+  transform: rotate(0.4deg);
+}
+.three {
+  width: 91%;
+  height: 28%;
+  background-color: #b20403;
+  margin: auto;
+  filter: blur(2px);
+  box-shadow: 0 0 5px 5px #b20403;
+  border-radius: 30px 25px 60px 12px; /*clockwise from upper left*/
+  transform: rotate(-0.8deg);
+}
+.one,
+.two {
+  filter: blur(
+    1px
+  ); /*The .canvas has a 2px blur applied to it.
+  •	The .one and .two elements, being children of .canvas, will also inherit the 2px blur.
+  •	When you apply filter: blur(1px); to .one and .two, it adds an additional 1px blur to whatever is already applied.*/
+}
+/*
+In CSS, the behavior of elements regarding padding, overflow, and how they interact with their parent container can vary 
+based on several factors. Here’s a breakdown of how to think about these conditions:
+
+Conditions Affecting Element Behavior
+
+	1.	Padding
+        •	What It Does: 
+                Padding adds space between the content of an element and its border. It increases the overall dimensions of 
+                the element unless you use the box-sizing: border-box; property.
+        •	Effects on Dimensions:
+                Without box-sizing: border-box;, adding padding will increase the total width and height of an element.
+                With box-sizing: border-box;, the padding is included in the element’s specified width and height, meaning 
+                it won’t increase the overall size.
+                
+	2.	Overflow
+        •	What It Does: 
+                The overflow property controls what happens to content that exceeds the dimensions of its container.
+        •	Settings:
+                visible: Content spills out of the element without any restrictions. This is the default behavior.
+                hidden: Any content that exceeds the dimensions will be cut off, and it won’t affect the size of the element.
+                scroll: Content that overflows will allow scrolling.
+                auto: Similar to scroll, but only shows scroll bars if necessary.
+        •	Effects on Dimensions:
+                If an element has overflow set to hidden, any excess content will not be visible, and the element’s 
+                dimensions will remain unchanged. This is useful when you want to avoid additional space being taken 
+                up by the overflow.
+	3.	Margin
+        •	What It Does: 
+                Margins create space outside an element, affecting how it interacts with neighboring elements.
+        •	Effects on Dimensions:
+                Margins do not change the dimensions of the element itself but can affect the layout by pushing elements 
+                apart or causing them to stack in specific ways.
+                Collapsing margins (vertical margins between block elements) can cause adjacent margins to merge, 
+                leading to unexpected spacing.
+
+When Do Elements Get Pushed/Stretched vs. Overflowing?
+
+	•	Get Pushed/Stretched:
+            If padding is applied without box-sizing: border-box;, the element will grow to accommodate the padding. 
+            This can push other elements away or stretch the overall dimensions.
+            If margins are applied, they can push neighboring elements away, leading to changes in layout but not 
+            the dimensions of the element itself.
+	•	Overflowing Without Changing Dimensions:
+            If you have a fixed height and width on an element and you apply overflow: hidden;, any content that 
+            exceeds those dimensions will be clipped, and the element won’t stretch or grow.
+            Using overflow properties like hidden, scroll, or auto can prevent the dimensions from changing even 
+            when content exceeds the defined size.
+
+Practical Application in Your Code
+
+	•	In your .canvas class:
+            You removed padding to prevent it from affecting the dimensions. By setting overflow: hidden;, 
+            any excess content within .canvas will be clipped without expanding the height of the .canvas.
+	•	In .one and .two:
+            These classes can have margins that may push them relative to the .canvas, but the dimensions themselves 
+            won’t change unless padding or margins cause a reflow.
+
+Conclusion
+
+To summarize, use padding to create space within an element (and adjust size unless using border-box), use margins to 
+control space between elements without affecting their dimensions, and use overflow to manage excess content without 
+changing the size of the container. Each property plays a specific role in layout management, so understanding these 
+nuances will help you create the desired visual effects effectively!
+*/

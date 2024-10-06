@@ -12,9 +12,10 @@ header {
   height: 200px;
   margin: 0;
   border-bottom: 5px solid #fff;
+  font-size: 22px;
 }
 
-header h1 {
+h1 {
   font-size: 22px;
 }
 

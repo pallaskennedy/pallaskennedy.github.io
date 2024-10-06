@@ -66,7 +66,7 @@
     />
 
     <title>This shows up on the tab</title>
-    <link rel="stylesheet" href="css/sample_styles.css" />
+    <link rel="stylesheet" href="css/reference_styles.css" />
     <!--adding defer or async to your JavaScript link optimizes page loading -->
     <script src="script.js" defer></script>
     <link rel="icon" href="favicon.ico" />
@@ -111,15 +111,15 @@
         distinct sections with related information. For example, on a blog page,
         you could have different sections for the blog post, related articles,
         and comments.
-        Purpose: Used to group related content thematically. A <section> typically 
+        Purpose: Used to group related content thematically. A section typically 
           contains a heading and represents a standalone portion of content that is 
           thematically related.
-          •	Usage: Use a <section> when you want to create distinct parts of the 
+          •	Usage: Use a section when you want to create distinct parts of the 
             content that share a common theme or subject matter.
-          •	Example: In a blog post, you might have a <section> for the introduction,
+          •	Example: In a blog post, you might have a section for the introduction,
             another for the main content, and a third for the conclusion.
 
-            Use <section>, <article></article>and <p> for organizing textual content 
+            Use section,article and p for organizing textual content 
               with meaning and context, much like paragraphs in an essay.
       </section>
       <article>
@@ -129,10 +129,10 @@
         Purpose: Represents a self-contained piece of content that could stand alone, 
         such as a blog post, news article, or user-submitted content. It usually includes
          its own title and is meant to be distributable or syndicateable.
-        •	Usage: Use an <article> when the content is independently meaningful and could
+        •	Usage: Use an article when the content is independently meaningful and could
            be published on its own, or when it makes sense to reference it outside of the 
            surrounding context.
-        •	Example: Each blog post on a blog page can be wrapped in an <article>.
+        •	Example: Each blog post on a blog page can be wrapped in an article.
       </article>
       <aside>
         • The “sidebar” or “storage room” for secondary information. • Holds
@@ -146,61 +146,91 @@
         structure.
         Purpose: A generic container used for grouping elements without any semantic 
         meaning. It's primarily used for styling and layout purposes.
-      •	Usage: Use a <div> when there is no suitable semantic element to represent the content.
+      •	Usage: Use a div when there is no suitable semantic element to represent the content.
         It's helpful for applying CSS styles or JavaScript functionality but does not provide 
         meaning to the content itself.
       •	Example: Wrapping multiple sections together for styling or organizational purposes.
-      Use <div> for grouping visual components or layout elements that don't have specific semantic 
+      Use div for grouping visual components or layout elements that don't have specific semantic 
         meaning, much like organizing different parts of a drawing or design.
 
       </div>
       <form>
         • The “office” or “workroom” where users interact. • Used for input,
-        such as user registrations, surveys, or logins.
+        such as user registrations, surveys, or logins.</br>
 
-        you typically use a <fieldset> instead of a <section> when you are grouping related form elements. The <fieldset> element is specifically designed for forms to group inputs, making it clear that they belong to a particular section of the form. It also allows you to optionally use a <legend> element to label the group.
+        you typically use a  fieldset instead of a section when you are grouping related form elements. 
+        The fieldset element is specifically designed for forms to group inputs, making it clear that 
+        they belong to a particular section of the form. It also allows you to optionally use a 
+        legend element to label the group.</br>
 
-          Here's a comparison:
+          Here's a comparison:</br>
           
-          When to Use <fieldset>
+          When to Use fieldset</br>
           
-            •	Group related form elements together (e.g., personal details, payment information).
-            •	Provide a visual boundary around the group of form inputs.
-            •	Use <legend> to give a label for the group.
-        When to Use <section>
+            •	Group related form elements together (e.g., personal details, payment information).</br>
+            •	Provide a visual boundary around the group of form inputs.</br>
+            •	Use legend to give a label for the group.</br></br>
+        When to Use section</br>
 
-          •	<section> is used for grouping content that is thematically related on the page, but not specifically for forms.
-          •	It organizes large sections of the page, not just form elements.
+          •	section is used for grouping content that is thematically related on the page, 
+          but not specifically for forms.</br>
+          •	It organizes large sections of the page, not just form elements.</br>
         
 
-          •	<fieldset>: Specifically for forms, helps group related inputs with an optional label (<legend>).
-            •	<section>: Used for broader page content, more general for organizing non-form content.
+          •	fieldset: Specifically for forms, helps group related inputs with an optional label (legend).</br>
+            •	section: Used for broader page content, more general for organizing non-form content.</br>
           
       </form>
       <figure>
-        A “gallery room” used to group images, diagrams, and media.
-        <figcaption>provides a caption for that media</figcaption>
+        Figure tag is A “gallery room” used to group images, diagrams, and media.
+        
+        <img src="images/BoxModel.png">
+<figcaption>The Box Model</figcaption>
+        <P>In the CSS box model, every HTML element is treated as a box with four areas.</br>
+
+          Imagine you receive a box from your favorite online retailer -- the content is the item 
+          in the box, or in our case, a header, paragraph, or image element.</br>
+          The content is surrounded by a space called padding, similar to how bubble wrap separates
+           an item from the box around it.</br>
+
+          Think of the border like the cardboard box your item was shipped in.</br>
+          
+          Margin is the area outside of the box, and can be used to control the space between other 
+          boxes or elements.</br>
+
+          Here the bottom element has a larger top margin, pushing it further down the page.</br>
+
+
+        </P>
+        
       </figure>
       <section>
         The “decorations” within the rooms of your HTML structure are the
         smaller elements like text, images, and links that add content and
         visual detail. These elements don't define the overall layout but
         provide the actual content users interact with. Here's a breakdown:
-        Common “Decorations” (Content Elements) in HTML Rooms: 1.
-        <h1>Headings</h1>
+        Common “Decorations” (Content Elements) in HTML Rooms: <br />
+        
+        <h1> 1. Headings</h1>
         • Like “title signs” in different rooms. • Used to define headings or
         subheadings in content. The h1 tag is the most important (main heading),
-        while h6 is the least important. 2.
+        while h6 is the least important. <br />
+        
+        <p>2. Paragraph</p>
         <p>
           Paragraphs • The “text” or “written notes” inside the room. • Used to
           structure blocks of text in a readable way.
-        </p>
-        3. <a>Links</a> • The “doorways” to other rooms or external places. •
+        </p><br />
+        <a>3. Links</a> • The “doorways” to other rooms or external places. •
         Used to create clickable links that direct users to other web pages,
-        sections, or even external resources. 4. Images (<img />) • The
+        sections, or even external resources. <br />
+        
+        4. Images </br>• The
         “pictures” or “art on the walls.” • Used to embed images within the
-        content. 5. Lists • The “bulletin boards” or “to-do lists” in the room.
-        •
+        content. <br />
+        
+        5. Lists • The “bulletin boards” or “to-do lists” in the room.
+        
         <ul>
           <li>creates an unordered list (bulleted)</li>
           <li>is the list item element</li>
@@ -209,27 +239,35 @@
           <li>creates an ordered list (numbered).</li>
           <li>is the list item element for both lists</li>
         </ol>
-        6. <button>Buttons</button> • The “interactive switches” or
+        <br />
+        <button>6. Buttons</button> • The “interactive switches” or
         “call-to-action” areas. • Used for clickable buttons that submit forms
-        or perform other actions. 7. Input fields (<input />,
+        or perform other actions. <br />
+        <br />
+        <input> 7. Input fields
         <textarea>textareas</textarea>,
-        <select>
-          selections</select
-        >) • The “form elements” or “user input devices.” • Allow users to enter
+        <select> selections</select>
+         • The “form elements” or “user input devices.” • Allow users to enter
         data, such as text, checkboxes, radio buttons, file uploads, or dropdown
-        options. 8. Bold and Italics • The “emphasis” or “highlighting” of
+        options. <br />
+        
+        8. Bold and Italics • The “emphasis” or “highlighting” of
         certain parts. • <b>visual bold</b> and <i>italic styling</i>, while
         <strong>strong</strong> and <em>em</em> are used to emphasize importance
-        semantically. 9.
-        <blockquote>Blockquotes</blockquote>
+        semantically.  Note: strong and em are handled by screen readers why Bold
+        and italcs are ignored by them.
+        <br />
+      
+        <blockquote>9. Blockquotes</blockquote>
         • The “framed quotes” on the walls. • Used to display quoted text, often
-        from another source. 10. Line breaks (<br />) and Horizontal Rules (
-        <hr />
-        ) • The “dividers” or “spacers” in the room. • <br />
+        from another source. <br />
+        10. Line breaks and Horizontal Rules 
+        • The “dividers” or “spacers” in the room. • br
         is for line breaks (used in text to create single-line breaks), and
-        <hr />
+        hr
         is for horizontal lines to visually separate content.
       </section>
+
     </main>
     <footer>
       • The “basement” or the foundation of the page. • Appears at the bottom
