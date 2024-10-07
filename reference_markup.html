@@ -84,17 +84,18 @@
   </head>
   <body>
     <header>
-      This section is like the room where you introduce people to the house (the
+      HEADER (framework): This section is like the room where you introduce people to the house (the
       site), possibly with a welcome mat, logo, or some initial information.
     </header>
     <nav aria-label="Main navigation">
-      This is like the hallway or the set of doorways that let people move
+      NAV (framework): This is like the hallway or the set of doorways that let people move
       around the house (the website). If it's convenient, the navigation can be
       inside the header room, but it could also have its own space. ARIA
       landmarks or descriptive labels (like aria-label or aria-labelledby) can
       improve accessibility for screen readers.
     </nav>
     <nav aria-label="Breadcrumb">
+      BreadCrumb Nav (framework):  still unclear on this
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/section">Section</a></li>
@@ -102,12 +103,12 @@
       </ul>
     </nav>
     <main>
-      • The “living room” of the page, which contains the most important
+    MAIN (framework) : The “living room” of the page, which contains the most important
       content. • The main content area where the primary focus of the page is
       displayed, such as articles, forms, or other interactive content.
 
       <section>
-        • The “room dividers” inside the main content. • Organizes content into
+        SECTION (structure): The “room dividers” inside the main content. • Organizes content into
         distinct sections with related information. For example, on a blog page,
         you could have different sections for the blog post, related articles,
         and comments.
@@ -123,7 +124,7 @@
               with meaning and context, much like paragraphs in an essay.
       </section>
       <article>
-        • A “self-contained room” or “apartment” for individual content items. •
+        ARTICLE (structure): A “self-contained room” or “apartment” for individual content items. •
         Used for standalone content, like blog posts, news articles, or
         user-submitted content.
         Purpose: Represents a self-contained piece of content that could stand alone, 
@@ -135,11 +136,12 @@
         •	Example: Each blog post on a blog page can be wrapped in an article.
       </article>
       <aside>
-        • The “sidebar” or “storage room” for secondary information. • Holds
+        • Aside: The “sidebar” or “storage room” for secondary information. • Holds
         supplementary content related to the main content but not part of it,
         such as ads, additional links, or author bio information.
       </aside>
       <div>
+        DIV (structure): 
         • The “generic room” or “flex space.” • A versatile container that is
         used to group other elements together, often for layout purposes or
         styling. It doesn't carry any semantic meaning by itself but helps with
@@ -155,10 +157,14 @@
 
       </div>
       <form>
+        FORM (component) :
         • The “office” or “workroom” where users interact. • Used for input,
         such as user registrations, surveys, or logins.</br>
+        
+        <fieldset> 
+          FIELDSET (structure) :
 
-        you typically use a  fieldset instead of a section when you are grouping related form elements. 
+        You typically use a  fieldset instead of a section when you are grouping related form elements. 
         The fieldset element is specifically designed for forms to group inputs, making it clear that 
         they belong to a particular section of the form. It also allows you to optionally use a 
         legend element to label the group.</br>
@@ -179,13 +185,27 @@
 
           •	fieldset: Specifically for forms, helps group related inputs with an optional label (legend).</br>
             •	section: Used for broader page content, more general for organizing non-form content.</br>
-          
+          </fieldset>
+          <button>Buttons (component) </button> • The “interactive switches” or
+        “call-to-action” areas. • Used for clickable buttons that submit forms
+        or perform other actions. <br />
+        <br />
+        <input>Input fields (component)
+        <textarea>textareas  (component)</textarea>,
+        <select> selections  (component)</select>
+         • The “form elements” or “user input devices.” • Allow users to enter
+        data, such as text, checkboxes, radio buttons, file uploads, or dropdown
+        options. <br />
       </form>
       <figure>
-        Figure tag is A “gallery room” used to group images, diagrams, and media.
+        FIGURE (structure) :
+        Figure tag is A “gallery room” used to group images, diagrams, and media.<br>
+        Images (content) </br>• The
+        “pictures” or “art on the walls.” • Used to embed images within the
+        content. <br />
         
         <img src="images/BoxModel.png">
-<figcaption>The Box Model</figcaption>
+        <figcaption>FIGCAPTION (structure) The Box Model</figcaption>
         <P>In the CSS box model, every HTML element is treated as a box with four areas.</br>
 
           Imagine you receive a box from your favorite online retailer -- the content is the item 
@@ -204,69 +224,69 @@
         </P>
         
       </figure>
-      <section>
-        The “decorations” within the rooms of your HTML structure are the
-        smaller elements like text, images, and links that add content and
-        visual detail. These elements don't define the overall layout but
-        provide the actual content users interact with. Here's a breakdown:
-        Common “Decorations” (Content Elements) in HTML Rooms: <br />
+    
+        <hr>
+      
         
-        <h1> 1. Headings</h1>
+        <h1> Headings (structure) </h1>
         • Like “title signs” in different rooms. • Used to define headings or
         subheadings in content. The h1 tag is the most important (main heading),
         while h6 is the least important. <br />
         
-        <p>2. Paragraph</p>
+        <p>Paragraph  (structure) </p>
         <p>
           Paragraphs • The “text” or “written notes” inside the room. • Used to
           structure blocks of text in a readable way.
         </p><br />
-        <a>3. Links</a> • The “doorways” to other rooms or external places. •
+        <a>3. Links (component)</a> • The “doorways” to other rooms or external places. •
         Used to create clickable links that direct users to other web pages,
         sections, or even external resources. <br />
         
-        4. Images </br>• The
-        “pictures” or “art on the walls.” • Used to embed images within the
-        content. <br />
         
-        5. Lists • The “bulletin boards” or “to-do lists” in the room.
+        
+        Lists (structure) • The “bulletin boards” or “to-do lists” in the room.
         
         <ul>
-          <li>creates an unordered list (bulleted)</li>
-          <li>is the list item element</li>
+          <li> creates an unordered list (bulleted)</li>
+          <li>list items (content) </li>
         </ul>
         <ol>
           <li>creates an ordered list (numbered).</li>
           <li>is the list item element for both lists</li>
         </ol>
         <br />
-        <button>6. Buttons</button> • The “interactive switches” or
-        “call-to-action” areas. • Used for clickable buttons that submit forms
-        or perform other actions. <br />
-        <br />
-        <input> 7. Input fields
-        <textarea>textareas</textarea>,
-        <select> selections</select>
-         • The “form elements” or “user input devices.” • Allow users to enter
-        data, such as text, checkboxes, radio buttons, file uploads, or dropdown
-        options. <br />
-        
-        8. Bold and Italics • The “emphasis” or “highlighting” of
-        certain parts. • <b>visual bold</b> and <i>italic styling</i>, while
-        <strong>strong</strong> and <em>em</em> are used to emphasize importance
-        semantically.  Note: strong and em are handled by screen readers why Bold
-        and italcs are ignored by them.
-        <br />
       
-        <blockquote>9. Blockquotes</blockquote>
-        • The “framed quotes” on the walls. • Used to display quoted text, often
-        from another source. <br />
-        10. Line breaks and Horizontal Rules 
-        • The “dividers” or “spacers” in the room. • br
-        is for line breaks (used in text to create single-line breaks), and
-        hr
-        is for horizontal lines to visually separate content.
-      </section>
+        Common Styling/Formatting Elements:<br />
+
+        <br />Text Decoration
+         <br />•	<u> Underline text.</u>
+         <br />•	<s> Strikethrough text (indicates something is no longer accurate or relevant). </s>
+         <br /> Text Semantics
+         <br />•	<mark> Highlight text  (typically used for search results).</mark>
+         <br />•	<small> Decrease the font size for fine print or disclaimers.</small>
+         <br />•	<sub> Subscript text (like chemical formulas).</sub>
+         <br />•	<sup> Superscript text (like footnotes or exponents).</sup>
+         <br />Quotation Elements
+         <br />•	<q> Inline quotation (typically adds quotation marks automatically).</q>
+         	<blockquote> Block quotation (used for longer quotes, usually with indentation).</blockquote>
+         <br />Keyboard and Code
+         <br />•	<kbd> Represents user input (like keyboard input).</kbd>
+         <br />•	<code> Displays code snippets, typically in a monospaced font.</code>
+         <br />•	<pre> Preserves whitespace and line breaks, often used for preformatted text (like code blocks).</pre>
+         <br /> Emphasis and Importance
+         <br />•	<bdi> Bi-directional isolation, useful for text that may have mixed directionality.</bdi>
+         <br />•	<bdo> Bi-directional override, alters the directionality of the text.</bdo>
+         <br />Abbreviations and Acronyms
+         <br />•	<abbr> Represents an abbreviation or acronym, often with a title attribute for clarification.</abbr>
+         <br />•	<cite> Represents the title of a work, like a book or article.</cite>
+         <br />Icons and Visual Elements
+         <br />•	<i> Italic text (used for emphasis, foreign words, or titles).</i>
+         <br />•	<b> Bold text (used for strong importance).</b>
+
+         <aside>href → Linking: Used to link to external resources or navigate to another page. It points to a resource.
+        <br/>
+          src → Embedding: Used to directly embed content into the page, such as images or scripts, and make the browser fetch and load them immediately.</aside>
+          
 
     </main>
     <footer>

@@ -1,252 +1,90 @@
-/*
-Notes: 
-A pseudo-selector in CSS is used to style elements based on their state or position 
-in the document, even if those states aren’t explicitly defined in the HTML.
-
-
-Use an id='name' on the html for a unique element that appears only once on the page. 
-id is selected with #ID on the stylesheet.
-
-Use .class='name' in the html for styling or functionality that will apply to multiple 
-elements. 
-class is selected with .class in the stylesheet. 
-
-
-
- With hex colors, 00 is 0% of that color, and FF is 100%. So #00FF00 translates to 0% red, 100% green, 
- The HSL color model, or hue, saturation, and lightness, is another way to represent colors.
- The CSS hsl function accepts 3 values: a number from 0 to 360 for hue, a percentage from 0 to 100 
- for saturation, and a percentage from 0 to 100 for lightness.
- If you imagine a color wheel, the hue red is at 0 degrees, green is at 120 degrees, and blue 
- is at 240 degrees.
- Saturation is the intensity of a color from 0%, or gray, to 100% for pure color. You must include
- the percent sign % to the saturation and lightness values.
- Lightness is how bright a color appears, from 0%, or complete black, to 100%, complete white, 
- with 50% being neutral.
-
-  If no gradientDirection argument is provided to the linear-gradient function, it arranges colors from 
-  top to bottom, or along a 180 degree line, by default.
-
-Color-stops allow you to fine-tune where colors are placed along the gradient line. They are a length 
- unit like px or percentages that follow a color in the linear-gradient function. The linear-gradient 
- function automatically calculates these values for you, and places colors evenly along the gradient 
- line by default.  They color-stop values in .red are unnecessary
-
-box-shadow: offsetX offsetY blurRadius spreadRadiuscolor; 
-  both offsetX and offsetY accept number values in px and other CSS units
-  a positive offsetX value moves the shadow right and a negative value moves it left
-  a positive offsetY value moves the shadow down and a negative value moves it up
-  if you want a value of zero (0) for any or both offsetX and offsetY, you don't need 
-  to add a unit. Every browser understands that zero means no change.
-  The height and width of the shadow is determined by the height and width of the element 
-  it's applied to. You can also use an optional spreadRadius value to spread out the reach 
-  of the shadow. More on that later.
-  If a blurRadius value isn't included, it defaults to 0 and produces sharp edges. The higher
-  the value of blurRadius, the greater the blurring effect is.
-
- With the CSS opacity property, you can control how opaque or transparent an element is.
- With the value 0, or 0%, the element will be completely transparent, and at 1.0, or 100%, 
- the element will be completely opaque like it is by default.
-
- alpha channel also controls opacity using rgba(redValue, greenValue, blueValue, alphaValue);
-
-inline-block elements only take up the width of their container which might necessitate a 
-  width property that container 
-
-
-
-Notes:
-The vh unit stands for viewport height, and is equal to 1% of the height 
-   of the viewport. This makes it relative to the viewport height. Best not
-   used for text sizing.
-
-em (element): The unit is relative to the font size of the parent element.  
-  It is particularly useful for components that should scale with a local
-  container’s size.  For example, if a parent element has a font size of 
-  16px and you set {padding: 2em;}, the padding will be 2 * 16px = 32px.
-	
-rem (root element): The unit is relative to the font size of the root (HTML)
-   element, typically defined as 16px by default in most browsers. You need 
-   consistent sizing based on the root element’s font size (usually for global 
-   scaling). It’s ideal when you want to keep sizes consistent across the whole 
-   page, regardless of local font size changes. 1rem always equals the root 
-   font size, regardless of the font size of parent elements.
-
-direction notation   
-  padding: top right bottom left;
-  padding: 2rem 0 2rem 0;
-
-  padding: top-bottom left-right; 
-  padding: 2rem 0;
-
-  padding: all-directions;
-  padding: 2rem;
-*/
-
-
 /*-120-standard-max---------------------------------------------------------------------------------------------------*/
 
 /*----------------------------------------------------- WORKFLOW -----------------------------------------------------*/
 
-/* 1.   Reset/Normalize: Prep the browser to behave by removing ALL margins, paddings, and quirks (this is broad).    */
-/* 2.   Global Styles: Create specific styles that apply to the whole page (body font, button styles, etc.).          */
-/* 3.   Layout Styles: Create specific styles that apply to the layout containers like header, footer, navigation.    */
-/* 4.   Component Styles: Create specific styles that apply to the specific buttons, forms, cards, etc.               */
-/* 5.   Utility Classes: Apply consistent style classes across your site without writing repetitive CSS.              */
-/* 6.   Media Queries (Optional): Apply different styles based on the screen size.                                    */
+/* 1.   Reset/Normalize: Prep the different browsers to behave consistently.       */
+/* 2.   Global Styles: Not layout, not component, not utility       */
+/* 3.   Layout Styles: Framework and Structure Styling       */
+/* 4.   Component Styles: UI Element Styling              */
+/* 5.   Utility Classes: Class and ID styling             */
+/* 6.   Media Queries (Optional): Apply different styles based on the screen size.        */
 
-/* 1. Reset/Normalize Styles (optional): 
-    This is like wiping down the surfaces of your house before decorating it. You’re just getting 
-    everything clean and neutral and ensuring that every browser starts from the same level. It 
-    helps eliminate default styles that can cause inconsistencies across different browsers, giving 
-    you a clean slate to work from.   */
-
-/* 2. Global Styles
-    Set baseline styles for html page. This is like ensuring that every room in a house
-    has a cohesive look. Use only general selectors like body, headings, paragraphs, images, links, 
-    figcaptions, buttons, and form elements. This includes defining global font sizes, colors, and 
-    spacing. You can always go back and adjust specific rooms later if needed. */
-
-/* 3. Layout Styles 
-    Define styles for the overall structure of the webpage. Think of this as styling the 
-    different rooms in the house: headers, footers, navigation, main, etc 
-    In this section, you can use #ID or .class selectors to style these structural elements, 
-    ensuring that the layout is visually organized and functional. */
-
-/* 4. Component Styles 
-    This section is for styling specific components or modules of the webpage, like buttons, 
-    forms, cards, and other distinct elements. Think of it as customizing individual walls and 
-    windows in each room of your house to give them their unique look and functionality. This
-    is where you can apply specific styles to enhance the appearance and usability of these 
-    elements without affecting the overall layout or global styles. */
-
-/* 5. Utility Classes
-    Create simple, reusable styles for things like spacing (margin and padding), 
-    and text alignment. You can use these classes anywhere on your site to make 
-    it look nice and consistent! */
-
-/* 6. Media Queries (Optional)
-    Add styles here that help your website look good on different screen sizes (like phones
-    and tablets). Put these at the end of your stylesheet so they can change the styles 
-    that came before them if needed. */
-
-/*---------------------------------------------------- GUIDELINES ----------------------------------------------------*/
-/*
-    1. Keep a Consistent Structure
-    
-        •  Reset/Normalize: 
-            Start with a reset or normalize file at the top to make sure everything looks the same in 
-            different browsers.
-        •  Global Styles: 
-            Set styles for common HTML elements (like body, paragraphs, and headings) and decide on 
-            basic styles like colors and spacing.
-        •  Layout: 
-            Write styles for main parts of your page, like the header, footer, and where your content goes.
-        •  Components: 
-            Organize styles for specific parts, like buttons, forms, and cards.
-        •  Utilities/Helpers: 
-            Add helper classes (like .text-center for centering text) at the bottom.
-    
-    2. Order of CSS Properties
-    
-        •  Outside-in Approach: Start with the big outer styles and work your way to the smaller inner styles.
-        •  Alphabetical Order: Another way is to list the properties in alphabetical order for easier reading.
-    
-    3. Modular CSS
-    
-    Write your CSS in a way that makes it easy to reuse:
-    
-        •  Use Classes: Use classes instead of tags to make your CSS more flexible.
-        •  Naming Systems: You can use systems like BEM (Block, Element, Modifier) to help you name your classes 
-            clearly and keep things organized.
-        •  SMACSS: Another method is SMACSS (Scalable and Modular Architecture for CSS), which organizes CSS 
-            into sections for easier management.
-    
-    4. Media Queries
-    
-        Put media queries (rules for different screen sizes) close to the styles they change, or group them at 
-        the end of your stylesheet for easy finding.
-    
-    5. CSS Variables
-    
-        Use CSS variables to store values you use often, like colors or spacing. This makes it easier to change
-        things later.
-
-
-
-
-
-/*--------------------------------------------------- THE CASCADE ---------------------------------------------------*/
-/*
-    The cascade in CSS refers to the way styles are applied to elements based on their specificity and the order
-        in which they are defined. Here’s a breakdown of how CSS rules interact, including inline, internal, and 
-        external styles:
-
-    1. Inline Styling is applied directly within an HTML element using the style attribute. 
-        <h1 style="color: blue;">Hello World</h1>
-        Inline styles have the highest specificity and will override styles defined in both 
-        internal and external stylesheets, regardless of their order.
-
-    2. Internal Styling is defined within a <style> tag in the <head> section of an HTML document. Internal 
-        styles have a lower specificity than inline styles but higher than external styles. If an internal 
-        style conflicts with an external style, the internal style will take precedence if it comes later 
-        in the stylesheet.
-
-    3. External Styling is defined in a separate CSS file linked to an HTML document using the <link> tag. 
-        External styles have the lowest specificity compared to inline and internal styles. If an external 
-        style conflicts with an internal style or an inline style, those latter styles will take precedence.
-        !important: A rule can be made to take precedence over all other rules by appending !important to 
-        the property.
-        h1 {
-            color: green !important;
-            }
-
-    4. Specificity and Importance
-
-        If multiple styles apply to the same element, the browser determines which one to use based on 
-        specificity:
-        Specificity Ranking
-
-        1.	Inline Styles (highest)
-        2.	IDs  #myElement { color: blue; }
-        3.	Classes .myClass { color: red; }
-        4.	Type Selectors (lowest) These are the actual HTML element names.  p { color: green; }
-
-    Specificity Calculation
-        To illustrate your example with an element having a class, an ID, and a type selector all targeting 
-        the same property (color):
-        <p id="myParagraph" class="myClass">Hello, World!</p>   
-            #myParagraph { color: blue; }     ID selector 
-            .myClass { color: red; }           Class selector 
-            p { color: green; }                Type selector 
-
-    Result:  Hello, World! will be blue
-    */
+/* CSS */
+/* Positioning */
+/* Box Model */
+/* Flexbox/Grid */
+/* Typography */
+/* Backgrounds */
+/* Effects and Transitions */
+/* Miscellaneous */
 
 /*
 
-    <!--It's better practice to choose one color as the dominant color, and use its complementary 
-        color as an accent to bring attention to certain content on the page.
-        Two colors that are opposite from each other on the color wheel are called complementary colors. 
-        If two complementary colors are combined, they produce gray. But when they are placed side-by-side, 
-        these colors produce strong visual contrast and appear brighter.
-        rgb(255,0,0) & rgb(0,255,255) are opposite each other.-->
-    <!--
-        With hex colors, 00 is 0% of that color, and FF is 100%. So #00FF00 translates to 0% red, 100% green, 
-        and 0% blue, and is the same as rgb(0, 255, 0).  FF -> 255, 7F -> 127
-        -->
-    <!--The HSL color model, or hue, saturation, and lightness, is another way to represent colors.
-        The CSS hsl function accepts 3 values: a number from 0 to 360 for hue, a percentage from 0 to 100 
-        for saturation, and a percentage from 0 to 100 for lightness.
-        If you imagine a color wheel, the hue red is at 0 degrees, green is at 120 degrees, and blue 
-        is at 240 degrees.
-        Saturation is the intensity of a color from 0%, or gray, to 100% for pure color. You must include 
-        the percent sign % to the saturation and lightness values.
-        Lightness is how bright a color appears, from 0%, or complete black, to 100%, complete white, 
-        with 50% being neutral.-->
-*/
+Suggested Order of CSS Properties
 
+	1.Positioning
+      •	position
+      •	top, right, bottom, left
+      •	z-index
+	2.Box Model
+      •	display
+      •	width, height
+      •	margin, padding, border (including border-width, border-style, border-color)
+	3.Flexbox/Grid (if applicable)
+      •	flex properties (like flex-direction, justify-content, align-items)
+      •	grid properties (like grid-template-columns, grid-template-rows)
+	4.Typography
+      •	font-family
+      •	font-size
+      •	font-weight
+      •	line-height
+      •	color
+      •	text-align, text-decoration, text-transform
+	5.Backgrounds
+      •	background-color
+      •	background-image
+      •	background-size, background-position, background-repeat
+	6.Effects and Transitions
+      •	opacity
+      •	box-shadow
+      •	transition, transform
+	7.Miscellaneous
+      •	Any additional properties, such as overflow, cursor, or any specific styles related to your design.
+  */
 
+.card {
+  /* Positioning */
+  position: relative;
+  top: 10px;
+  left: 20px;
+
+  /* Box Model */
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+  padding: 15px;
+  border: 2px solid #ccc;
+
+  /* Flexbox/Grid */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* Typography */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+
+  /* Backgrounds */
+  background-color: #f9f9f9;
+
+  /* Effects and Transitions */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+
+  /* Miscellaneous */
+  overflow: hidden;
+}
 /*-120-standard-max---------------------------------------------------------------------------------------------------*/
 /* 1. Reset/Normalize Styles (optional): 
 This is like wiping down the surfaces of your house before decorating it. You’re just getting everything clean and 
@@ -259,6 +97,12 @@ inconsistencies across different browsers, giving you a clean slate to work from
   padding: 0;
   box-sizing: border-box; /* Ensures padding & borders are included in element width/height */
 }
+/*The box-sizing property is used to set this behavior. By default, the content-box model is used. With this model, 
+when an element has a specific width, that width is calculated based only on the element's content. Padding and border
+ values get added to the total width, so the element grows to accommodate these values.
+ The border-box sizing model does the opposite of content-box. The total width of the element, including padding and 
+ border, will be the explicit width set. The content of the element will shrink to make room for the padding and border.
+*/
 
 html,
 body {
@@ -895,3 +739,158 @@ of your stylesheet so they can change the styles that came before them if needed
     margin: 10px 0; /* Add margin between markers */
   }
 }
+/*  NOTES */
+/*
+Notes: 
+A pseudo-selector in CSS is used to style elements based on their state or position 
+in the document, even if those states aren’t explicitly defined in the HTML.
+
+
+Use an id='name' on the html for a unique element that appears only once on the page. 
+id is selected with #ID on the stylesheet.
+
+Use .class='name' in the html for styling or functionality that will apply to multiple 
+elements. 
+class is selected with .class in the stylesheet. 
+
+
+
+ With hex colors, 00 is 0% of that color, and FF is 100%. So #00FF00 translates to 0% red, 100% green, 
+ The HSL color model, or hue, saturation, and lightness, is another way to represent colors.
+ The CSS hsl function accepts 3 values: a number from 0 to 360 for hue, a percentage from 0 to 100 
+ for saturation, and a percentage from 0 to 100 for lightness.
+ If you imagine a color wheel, the hue red is at 0 degrees, green is at 120 degrees, and blue 
+ is at 240 degrees.
+ Saturation is the intensity of a color from 0%, or gray, to 100% for pure color. You must include
+ the percent sign % to the saturation and lightness values.
+ Lightness is how bright a color appears, from 0%, or complete black, to 100%, complete white, 
+ with 50% being neutral.
+
+  If no gradientDirection argument is provided to the linear-gradient function, it arranges colors from 
+  top to bottom, or along a 180 degree line, by default.
+
+Color-stops allow you to fine-tune where colors are placed along the gradient line. They are a length 
+ unit like px or percentages that follow a color in the linear-gradient function. The linear-gradient 
+ function automatically calculates these values for you, and places colors evenly along the gradient 
+ line by default.  They color-stop values in .red are unnecessary
+
+box-shadow: offsetX offsetY blurRadius spreadRadiuscolor; 
+  both offsetX and offsetY accept number values in px and other CSS units
+  a positive offsetX value moves the shadow right and a negative value moves it left
+  a positive offsetY value moves the shadow down and a negative value moves it up
+  if you want a value of zero (0) for any or both offsetX and offsetY, you don't need 
+  to add a unit. Every browser understands that zero means no change.
+  The height and width of the shadow is determined by the height and width of the element 
+  it's applied to. You can also use an optional spreadRadius value to spread out the reach 
+  of the shadow. More on that later.
+  If a blurRadius value isn't included, it defaults to 0 and produces sharp edges. The higher
+  the value of blurRadius, the greater the blurring effect is.
+
+ With the CSS opacity property, you can control how opaque or transparent an element is.
+ With the value 0, or 0%, the element will be completely transparent, and at 1.0, or 100%, 
+ the element will be completely opaque like it is by default.
+
+ alpha channel also controls opacity using rgba(redValue, greenValue, blueValue, alphaValue);
+
+inline-block elements only take up the width of their container which might necessitate a 
+  width property that container 
+
+
+
+Notes:
+The vh unit stands for viewport height, and is equal to 1% of the height 
+   of the viewport. This makes it relative to the viewport height. Best not
+   used for text sizing.
+
+em (element): The unit is relative to the font size of the parent element.  
+  It is particularly useful for components that should scale with a local
+  container’s size.  For example, if a parent element has a font size of 
+  16px and you set {padding: 2em;}, the padding will be 2 * 16px = 32px.
+	
+rem (root element): The unit is relative to the font size of the root (HTML)
+   element, typically defined as 16px by default in most browsers. You need 
+   consistent sizing based on the root element’s font size (usually for global 
+   scaling). It’s ideal when you want to keep sizes consistent across the whole 
+   page, regardless of local font size changes. 1rem always equals the root 
+   font size, regardless of the font size of parent elements.
+
+direction notation   
+  padding: top right bottom left;
+  padding: 2rem 0 2rem 0;
+
+  padding: top-bottom left-right; 
+  padding: 2rem 0;
+
+  padding: all-directions;
+  padding: 2rem;
+*/
+
+/*--------------------------------------------------- THE CASCADE ---------------------------------------------------*/
+/*
+    The cascade in CSS refers to the way styles are applied to elements based on their specificity and the order
+        in which they are defined. Here’s a breakdown of how CSS rules interact, including inline, internal, and 
+        external styles:
+
+    1. Inline Styling is applied directly within an HTML element using the style attribute. 
+        <h1 style="color: blue;">Hello World</h1>
+        Inline styles have the highest specificity and will override styles defined in both 
+        internal and external stylesheets, regardless of their order.
+
+    2. Internal Styling is defined within a <style> tag in the <head> section of an HTML document. Internal 
+        styles have a lower specificity than inline styles but higher than external styles. If an internal 
+        style conflicts with an external style, the internal style will take precedence if it comes later 
+        in the stylesheet.
+
+    3. External Styling is defined in a separate CSS file linked to an HTML document using the <link> tag. 
+        External styles have the lowest specificity compared to inline and internal styles. If an external 
+        style conflicts with an internal style or an inline style, those latter styles will take precedence.
+        !important: A rule can be made to take precedence over all other rules by appending !important to 
+        the property.
+        h1 {
+            color: green !important;
+            }
+
+    4. Specificity and Importance
+
+        If multiple styles apply to the same element, the browser determines which one to use based on 
+        specificity:
+        Specificity Ranking
+
+        1.	Inline Styles (highest)
+        2.	IDs  #myElement { color: blue; }
+        3.	Classes .myClass { color: red; }
+        4.	Type Selectors (lowest) These are the actual HTML element names.  p { color: green; }
+
+    Specificity Calculation
+        To illustrate your example with an element having a class, an ID, and a type selector all targeting 
+        the same property (color):
+        <p id="myParagraph" class="myClass">Hello, World!</p>   
+            #myParagraph { color: blue; }     ID selector 
+            .myClass { color: red; }           Class selector 
+            p { color: green; }                Type selector 
+
+    Result:  Hello, World! will be blue
+    */
+
+/*
+
+    <!--It's better practice to choose one color as the dominant color, and use its complementary 
+        color as an accent to bring attention to certain content on the page.
+        Two colors that are opposite from each other on the color wheel are called complementary colors. 
+        If two complementary colors are combined, they produce gray. But when they are placed side-by-side, 
+        these colors produce strong visual contrast and appear brighter.
+        rgb(255,0,0) & rgb(0,255,255) are opposite each other.-->
+    <!--
+        With hex colors, 00 is 0% of that color, and FF is 100%. So #00FF00 translates to 0% red, 100% green, 
+        and 0% blue, and is the same as rgb(0, 255, 0).  FF -> 255, 7F -> 127
+        -->
+    <!--The HSL color model, or hue, saturation, and lightness, is another way to represent colors.
+        The CSS hsl function accepts 3 values: a number from 0 to 360 for hue, a percentage from 0 to 100 
+        for saturation, and a percentage from 0 to 100 for lightness.
+        If you imagine a color wheel, the hue red is at 0 degrees, green is at 120 degrees, and blue 
+        is at 240 degrees.
+        Saturation is the intensity of a color from 0%, or gray, to 100% for pure color. You must include 
+        the percent sign % to the saturation and lightness values.
+        Lightness is how bright a color appears, from 0%, or complete black, to 100%, complete white, 
+        with 50% being neutral.-->
+*/

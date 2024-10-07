@@ -1,0 +1,174 @@
+/*-120-standard-max---------------------------------------------------------------------------------------------------*/
+/* 1.   Reset/Normalize: Prep the different browsers to behave consistently.       */
+/* CSS Reset - Removes all browser default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding & borders are included in element width/height */
+}
+
+html,
+body {
+  height: 100%; /* Ensure the body takes up full height */
+  font-size: 16px; /* Base font size */
+  font-family: Arial, sans-serif; /* Default font family */
+}
+
+/* Normalize Styles - Provides a consistent look across browsers */
+body {
+  line-height: 1.6; /* Set a common line height */
+  color: #369; /* Default text color */
+  background-color: #fff; /* Default background color */
+}
+
+/* Ensures that images scale properly */
+img {
+  max-width: 100%;
+  height: auto; /* Keep aspect ratio */
+  display: block; /* Remove bottom spacing in some browsers */
+}
+
+/* Ensures links are styled consistently */
+a {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Use the same color as surrounding text */
+}
+
+/* Normalize for lists */
+ul,
+ol {
+  list-style: none; /* Remove bullet points from lists */
+}
+
+/* Normalize for buttons */
+button {
+  background: none;
+  border: none; /* Remove button borders */
+  padding: 0;
+  font: inherit; /* Use the same font as the rest of the text */
+  cursor: pointer; /* Cursor pointer for clickable elements */
+}
+
+/* Forms */
+input,
+select,
+textarea,
+button {
+  font-family: inherit; /* Make form elements inherit the font */
+  font-size: inherit; /* Make form elements inherit the font size */
+  border: 1px solid #ccc; /* Light gray borders */
+  padding: 0.5rem; /* Add some padding */
+  border-radius: 4px; /* Rounded corners for inputs */
+}
+
+textarea {
+  resize: vertical; /* Only allow vertical resizing */
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold; /* Ensure bold headings */
+  line-height: 1.25; /* Consistent heading spacing */
+}
+
+/* Tables */
+table {
+  border-collapse: collapse; /* Collapse table borders */
+  width: 100%; /* Make tables take up full width */
+}
+
+th,
+td {
+  padding: 0.75rem; /* Add padding to table cells */
+  text-align: left; /* Align text to the left */
+  border: 1px solid #ccc; /* Light gray borders for cells */
+}
+
+/* Block elements margin reset */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+blockquote {
+  margin-bottom: 1.5rem; /* Add consistent spacing between block elements */
+}
+
+/* 2.   Global Styles: Not layout, not component, not utility       */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f5f6f7;
+}
+
+/* 3.   Layout Styles: Framework and Structure Styling        */
+/* 4.   Component Styles: UI Element Styling        */
+/* 5.   Utility Classes: Class and ID styling       */
+
+/* Positioning */
+/* Box Model */
+/* Flexbox/Grid */
+/* Typography */
+/* Backgrounds */
+/* Effects and Transitions */
+/* Miscellaneous */
+
+.gallery {
+  max-width: 1400px;
+  padding: 20px 10px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.gallery img {
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  object-fit: contain;
+  border: 5px solid lightblue;
+  border-radius: 10px;
+
+  /* cover will fill the container, maintain aspect ratio,crop to fit*/
+  /* contain will maintain the aspect ratio but there will be whitespace  */
+}
+/* Flexbox has a main and cross axis. The main axis is defined by the flex-direction property, which has four
+ possible values:
+
+row (default): horizontal axis with flex items from left to right
+row-reverse: horizontal axis with flex items from right to left
+column: vertical axis with flex items from top to bottom
+column-reverse: vertical axis with flex items from bottom to top
+
+Note: The axes and directions will be different depending on the text direction. The values shown are for a 
+left-to-right text direction. */
+
+.header {
+  padding: 32px;
+  border-bottom: 4px solid #fdb347;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  background: #0a0a23;
+}
+
+.separator {
+  border-top: 2px solid #ccc; /* Top border */
+  margin: 20px 0; /* Adjust spacing around the separator */
+  height: 0; /* Set height to 0 to avoid adding extra space */
+}
+
+/* 6.   Media Queries (Optional): Apply different styles based on the screen size.       */
