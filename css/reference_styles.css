@@ -1,3 +1,12 @@
+/* The :not pseudo-selector can be used to select all elements that do not match the given CSS rule.
+
+
+Example Code
+div:not(#example) {
+  color: red;
+}
+  
+*/
 /*-120-standard-max---------------------------------------------------------------------------------------------------*/
 
 /*----------------------------------------------------- WORKFLOW -----------------------------------------------------*/
