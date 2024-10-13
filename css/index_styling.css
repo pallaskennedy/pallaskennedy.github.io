@@ -8,15 +8,15 @@ body {
 }
 
 header {
-  position: relative; /* Enable positioning for the gradient */
+  position: relative;
   background: url(../images/jeep_flexing_on_a_rock.jpeg) top left no-repeat;
   height: 200px;
   margin: 0;
   border-bottom: 5px solid #fff;
   font-size: 22px;
   text-align: right;
-  background-size: cover; /* Adjust the image to fit the header */
-  overflow: hidden; /* Prevent overflow */
+  background-size: cover;
+  overflow: hidden;
 }
 
 .gradient-background {
@@ -29,20 +29,20 @@ header {
     circle,
     rgba(51, 102, 153, 0.5) 20%,
     rgba(0, 0, 0, 0) 80%
-  ); /* Subtle shine */
-  pointer-events: none; /* Allow mouse events to pass through */
-  opacity: 0; /* Start as invisible */
-  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 header:hover .gradient-background {
-  opacity: 0.3; /* Show the gradient when hovering */
+  opacity: 0.3;
 }
 
 header h1,
 header p {
-  position: relative; /* Required for z-index */
-  z-index: 1; /* Ensure text is above the gradient */
+  position: relative;
+  z-index: 1;
 }
 
 nav {
