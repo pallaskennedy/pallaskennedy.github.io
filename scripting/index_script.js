@@ -14,21 +14,21 @@ document.addEventListener("mousemove", (event) => {
   gradientDiv.style.background = `radial-gradient(at ${xPercent}% ${yPercent}%, rgb(51, 102, 153), rgb(0, 0, 0))`;
 });
 
-header.addEventListener("mousemove", (e) => {
-  const { clientX, clientY } = e;
-  const { offsetWidth, offsetHeight } = header;
+// header.addEventListener("mousemove", (e) => {
+//   const { clientX, clientY } = e;
+//   const { offsetWidth, offsetHeight } = header;
 
-  // Calculate the center of the header
-  const x = (clientX / offsetWidth) * 100; // percentage of the width
-  const y = (clientY / offsetHeight) * 100; // percentage of the height
+//   // Calculate the center of the header
+//   const x = (clientX / offsetWidth) * 100; // percentage of the width
+//   const y = (clientY / offsetHeight) * 100; // percentage of the height
 
-  // Adjust the position of the header content based on mouse position
-  const moveX = 0; // No horizontal movement, keep it aligned to the right
-  const moveY = (y - 50) * 0.2; // Adjust multiplier for desired effect
+//   // Adjust the position of the header content based on mouse position
+//   const moveX = 0; // No horizontal movement, keep it aligned to the right
+//   const moveY = (y - 50) * 0.2; // Adjust multiplier for desired effect
 
-  headerContent.style.transform = `translateY(-50%) translate(${moveX}px, ${moveY}px)`;
-});
+//   headerContent.style.transform = `translateY(-50%) translate(${moveX}px, ${moveY}px)`;
+// });
 
-header.addEventListener("mouseleave", () => {
-  headerContent.style.transform = "translateY(-50%)"; // Reset position when mouse leaves
-});
+// header.addEventListener("mouseleave", () => {
+//   headerContent.style.transform = "translateY(-50%)"; // Reset position when mouse leaves
+// });

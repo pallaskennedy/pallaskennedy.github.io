@@ -1,0 +1,54 @@
+/* 2.   Global Styles: Not layout, not component, not utility       */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f5f6f7;
+}
+
+/* 3.   Layout Styles: Framework and Structure Styling        */
+/* 4.   Component Styles: UI Element Styling        */
+/* 5.   Utility Classes: Class and ID styling       */
+
+/* Positioning */
+/* Box Model */
+/* Flexbox/Grid */
+/* Typography */
+/* Backgrounds */
+/* Effects and Transitions */
+/* Miscellaneous */
+
+.gallery {
+  max-width: 1400px;
+  padding: 20px 10px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.gallery img {
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  object-fit: contain;
+  border: 5px solid lightblue;
+  border-radius: 10px;
+  background-color: #f0f8ff;
+}
+/* cover will fill the container, maintain aspect ratio,crop to fit*/
+/* contain will maintain the aspect ratio but there will be whitespace  */
+
+/* Flexbox has a main and cross axis. The main axis is defined by the flex-direction property, which has four
+ possible values:
+
+row (default): horizontal axis with flex items from left to right
+row-reverse: horizontal axis with flex items from right to left
+column: vertical axis with flex items from top to bottom
+column-reverse: vertical axis with flex items from bottom to top
+
+Note: The axes and directions will be different depending on the text direction. The values shown are for a 
+left-to-right text direction. */
+
+/* 6.   Media Queries (Optional): Apply different styles based on the screen size.       */

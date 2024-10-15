@@ -1,8 +1,20 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/*------- Page Specific Styling --------------------------------------------------------------------------------------*/
+
+/* 2.   Global Styles: Not layout, not component, not utility       */
+/* 3.   Layout Styles: Framework and Structure Styling       */
+/* 4.   Component Styles: UI Element Styling              */
+/* 5.   Utility Classes: Class and ID styling             */
+/* 6.   Media Queries (Optional): Apply different styles based on the screen size.        */
+
+/* CSS */
+/* Positioning */
+/* Box Model */
+/* Flexbox/Grid */
+/* Typography */
+/* Backgrounds */
+/* Effects and Transitions */
+/* Miscellaneous */
+
 body {
   background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
   font-family: sans-serif;
@@ -29,13 +41,15 @@ p {
   text-align: center;
 }
 
-.menu {
+.menu,
+.main {
   width: 80%;
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
   max-width: 500px;
+  color: black;
 }
 img {
   display: block;

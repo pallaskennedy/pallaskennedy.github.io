@@ -1,7 +1,35 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/*------- Page Specific Styling --------------------------------------------------------------------------------------*/
+
+/* 2.   Global Styles: Not layout, not component, not utility       */
+/* 3.   Layout Styles: Framework and Structure Styling       */
+/* 4.   Component Styles: UI Element Styling              */
+/* 5.   Utility Classes: Class and ID styling             */
+/* 6.   Media Queries (Optional): Apply different styles based on the screen size.        */
+
+/* CSS */
+/* Positioning */
+/* Box Model */
+/* Flexbox/Grid */
+/* Typography */
+/* Backgrounds */
+/* Effects and Transitions */
+/* Miscellaneous */
+
+a,
+a:link,
+a:visited {
+  color: #369;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+}
+blockquote {
+  text-align: center;
 }
 body {
   background: #474747;
@@ -11,13 +39,18 @@ body {
   padding: 0px;
   color: #000;
 }
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
 
 header {
   position: relative;
   background: url(../images/jeep_flexing_on_a_rock.jpeg) top left no-repeat;
   height: 250px;
   margin: 0;
-  border-bottom: 5px solid #fff;
+
   text-align: right;
   background-size: cover;
   overflow: hidden;
@@ -79,18 +112,25 @@ ul li {
   color: #369;
 }
 
-a,
-a:link,
-a:visited {
-  color: #369;
-  text-decoration: none;
-  font-weight: normal;
+/* Utility Styling */
+.certifications {
+  max-width: 1400px;
+  padding: 20px 10px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }
+.certifications img {
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  object-fit: contain;
 
-a:hover {
-  color: #fff;
-  text-decoration: none;
-  font-weight: normal;
+  border-radius: 10px;
 }
 
 .dropdown {

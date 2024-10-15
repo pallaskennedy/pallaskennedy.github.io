@@ -1,109 +1,3 @@
-/*-120-standard-max---------------------------------------------------------------------------------------------------*/
-/* 1.   Reset/Normalize: Prep the different browsers to behave consistently.       */
-/* CSS Reset - Removes all browser default styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Ensures padding & borders are included in element width/height */
-}
-
-html,
-body {
-  height: 100%; /* Ensure the body takes up full height */
-  font-size: 16px; /* Base font size */
-  font-family: Arial, sans-serif; /* Default font family */
-}
-
-/* Normalize Styles - Provides a consistent look across browsers */
-body {
-  line-height: 1.6; /* Set a common line height */
-  color: #369; /* Default text color */
-  background-color: #fff; /* Default background color */
-}
-
-/* Ensures that images scale properly */
-img {
-  max-width: 100%;
-  height: auto; /* Keep aspect ratio */
-  display: block; /* Remove bottom spacing in some browsers */
-}
-
-/* Ensures links are styled consistently */
-a {
-  text-decoration: none; /* Remove underline from links */
-  color: inherit; /* Use the same color as surrounding text */
-}
-
-/* Normalize for lists */
-ul,
-ol {
-  list-style: none; /* Remove bullet points from lists */
-}
-
-/* Normalize for buttons */
-button {
-  background: none;
-  border: none; /* Remove button borders */
-  padding: 0;
-  font: inherit; /* Use the same font as the rest of the text */
-  cursor: pointer; /* Cursor pointer for clickable elements */
-}
-
-/* Forms */
-input,
-select,
-textarea,
-button {
-  font-family: inherit; /* Make form elements inherit the font */
-  font-size: inherit; /* Make form elements inherit the font size */
-  border: 1px solid #ccc; /* Light gray borders */
-  padding: 0.5rem; /* Add some padding */
-  border-radius: 4px; /* Rounded corners for inputs */
-}
-
-textarea {
-  resize: vertical; /* Only allow vertical resizing */
-}
-
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: bold; /* Ensure bold headings */
-  line-height: 1.25; /* Consistent heading spacing */
-}
-
-/* Tables */
-table {
-  border-collapse: collapse; /* Collapse table borders */
-  width: 100%; /* Make tables take up full width */
-}
-
-th,
-td {
-  padding: 0.75rem; /* Add padding to table cells */
-  text-align: left; /* Align text to the left */
-  border: 1px solid #ccc; /* Light gray borders for cells */
-}
-
-/* Block elements margin reset */
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul,
-ol,
-dl,
-blockquote {
-  margin-bottom: 1.5rem; /* Add consistent spacing between block elements */
-}
-
 /* 2.   Global Styles: Not layout, not component, not utility       */
 html {
   font-size: 16px;
@@ -117,26 +11,13 @@ body {
 /* 4.   Component Styles: UI Element Styling        */
 /* 5.   Utility Classes: Class and ID styling       */
 
-.header {
-  padding: 32px;
-  border-bottom: 4px solid #fdb347;
-  text-align: center;
-  text-transform: uppercase;
-  color: #fff;
-  background: #0a0a23;
-}
-
-.separator {
-  border-top: 2px solid #ccc; /* Top border */
-  margin: 20px 0; /* Adjust spacing around the separator */
-  height: 0; /* Set height to 0 to avoid adding extra space */
-}
-
 .label {
   width: 270px;
   border: 2px solid black;
   margin: 20px auto;
   padding: 0 7px;
+  background-color: white;
+  color: black;
 }
 
 header h1 {

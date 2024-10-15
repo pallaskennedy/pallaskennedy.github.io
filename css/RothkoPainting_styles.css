@@ -1,8 +1,26 @@
+/*------- Page Specific Styling --------------------------------------------------------------------------------------*/
+
+/* 2.   Global Styles: Not layout, not component, not utility       */
+/* 3.   Layout Styles: Framework and Structure Styling       */
+/* 4.   Component Styles: UI Element Styling              */
+/* 5.   Utility Classes: Class and ID styling             */
+/* 6.   Media Queries (Optional): Apply different styles based on the screen size.        */
+
+/* CSS */
+/* Positioning */
+/* Box Model */
+/* Flexbox/Grid */
+/* Typography */
+/* Backgrounds */
+/* Effects and Transitions */
+/* Miscellaneous */
+
 .frame {
-  width: 500px;
+  width: 700px;
 
   padding: 50px; /* put whitespace between black border and maroon background*/
   border: 50px solid black;
+  background-color: #f0fff0;
 
   margin: 20px auto; /* Vertical: 20px, Horizontal: auto; put a flexible whitespace outside the black border, centering it*/
 
@@ -62,12 +80,13 @@
 }
 .one,
 .two {
-  filter: blur(
-    1px
-  ); /*The .canvas has a 2px blur applied to it.
+  filter: blur(1px);
+}
+
+/*The .canvas has a 2px blur applied to it.
   •	The .one and .two elements, being children of .canvas, will also inherit the 2px blur.
   •	When you apply filter: blur(1px); to .one and .two, it adds an additional 1px blur to whatever is already applied.*/
-}
+
 /*
 In CSS, the behavior of elements regarding padding, overflow, and how they interact with their parent container can vary 
 based on several factors. Here’s a breakdown of how to think about these conditions:
