@@ -1,12 +1,4 @@
 /*----------------------------------------------------- WORKFLOW -----------------------------------------------------*/
-
-/* 1.   Reset/Normalize: Prep the different browsers to behave consistently.       */
-/* 2.   Global Styles: Not layout, not component, not utility       */
-/* 3.   Layout Styles: Framework and Structure Styling       */
-/* 4.   Component Styles: UI Element Styling              */
-/* 5.   Utility Classes: Class and ID styling             */
-/* 6.   Media Queries (Optional): Apply different styles based on the screen size.        */
-
 /* CSS */
 /* Positioning */
 /* Box Model */
@@ -15,3 +7,131 @@
 /* Backgrounds */
 /* Effects and Transitions */
 /* Miscellaneous */
+
+/* 2.   Global Styles: Not layout, not component, not utility       */
+html {
+  /* Setting a base font size of 10px give us easier rem calculations
+         Info: 1rem === 10px, 1.5rem === 15px, 2rem === 20px and so forth
+       */
+  font-size: 10px;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2.25rem;
+}
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  margin: 0 auto;
+}
+
+ul {
+  max-width: 550px;
+  margin: 0 auto 50px auto;
+  text-align: left;
+  line-height: 1.6;
+}
+
+li {
+  margin: 16px 0;
+}
+
+/* 3.   Layout Styles: Framework and Structure Styling       */
+blockquote {
+  font-style: italic;
+  max-width: 545px;
+  margin: 0 auto 50px auto;
+  text-align: left;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-align: center;
+  color: #333;
+  margin: 0;
+}
+
+/* 4.   Component Styles: UI Element Styling              */
+a {
+  color: #477ca7;
+}
+
+a:visited {
+  color: #74638f;
+}
+
+/* 5.   Utility Classes: Class and ID styling             */
+
+#main {
+  margin: 30px 8px;
+  padding: 15px;
+  border-radius: 5px;
+  background: #eee;
+}
+
+#img-div {
+  background: white;
+  padding: 10px;
+  margin: 0;
+}
+
+#img-caption {
+  margin: 15px 0 5px 0;
+}
+
+#headline {
+  margin: 50px 0;
+  text-align: center;
+}
+#main {
+  margin: 30px 8px;
+  padding: 15px;
+  border-radius: 5px;
+  background: #eee;
+  color: #333;
+}
+#title {
+}
+#img-div {
+}
+#img-caption {
+}
+#tribute-link {
+}
+#image {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* 6.   Media Queries (Optional): Apply different styles based on the screen size.        */
+
+@media (max-width: 460px) {
+  #img-caption {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 460px) {
+  #main {
+    margin: 0;
+  }
+}
+@media (max-width: 460px) {
+  h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+  }
+}
