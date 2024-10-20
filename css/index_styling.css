@@ -1,20 +1,5 @@
-/*------- Page Specific Styling --------------------------------------------------------------------------------------*/
-
-/* 2.   Global Styles: Not layout, not component, not utility       */
-/* 3.   Layout Styles: Framework and Structure Styling       */
-/* 4.   Component Styles: UI Element Styling              */
-/* 5.   Utility Classes: Class and ID styling             */
-/* 6.   Media Queries (Optional): Apply different styles based on the screen size.        */
-
-/* CSS */
-/* Positioning */
-/* Box Model */
-/* Flexbox/Grid */
-/* Typography */
-/* Backgrounds */
-/* Effects and Transitions */
-/* Miscellaneous */
-
+/*------------------------------ Global Styles ------------------------------*/
+/* Styling for links */
 a,
 a:link,
 a:visited {
@@ -28,9 +13,8 @@ a:hover {
   text-decoration: none;
   font-weight: normal;
 }
-blockquote {
-  text-align: center;
-}
+
+/* General body styling */
 body {
   background: #474747;
   font-family: "Lucida Grande", "Lucida Sans Unicode", verdana, lucida,
@@ -39,46 +23,13 @@ body {
   padding: 0px;
   color: #000;
 }
-footer {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
+
+/* Blockquote styling */
+blockquote {
+  text-align: center;
 }
 
-header {
-  position: relative;
-  background: url(../images/jeep_flexing_on_a_rock.jpeg) top left no-repeat;
-  height: 250px;
-  margin: 0;
-
-  text-align: right;
-  background-size: cover;
-  overflow: hidden;
-}
-
-header:hover .gradient-background {
-  opacity: 0.3;
-}
-
-header h1 {
-  font-size: clamp(1.3rem, 4vw + 1rem, 2.5rem);
-}
-
-header h1,
-header p {
-  position: relative;
-  z-index: 1;
-}
-
-nav {
-  background-color: #333;
-  border-bottom: 3px solid #5f5757;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
-
+/* Styling for paragraphs */
 p {
   font-size: clamp(0.7rem, 2vw + 0.3rem, 0.8rem);
   padding: 5px 5px 10px 5px;
@@ -86,6 +37,7 @@ p {
   line-height: 25px;
 }
 
+/* H3 styling */
 h3 {
   margin: 10px 0 0 0;
   padding: 0;
@@ -97,12 +49,14 @@ h3 {
   overflow: hidden;
 }
 
+/* Unordered lists */
 ul {
   list-style: none;
   margin: 2px 0 0 0px;
-  padding: 0 0 0 0;
+  padding: 0;
 }
 
+/* List item styling */
 ul li {
   background: transparent;
   margin: 7px;
@@ -112,27 +66,103 @@ ul li {
   color: #369;
 }
 
-/* Utility Styling */
-.certifications {
-  max-width: 1400px;
-  padding: 20px 10px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
+/*------------------------------ Header Section ------------------------------*/
+/* Header background image and layout */
+header {
+  position: relative;
+  background: url(../images/jeep_flexing_on_a_rock.jpeg) top left no-repeat;
+  height: 250px;
+  margin: 0;
+  text-align: right;
+  background-size: cover;
+  overflow: hidden;
 }
-.certifications img {
+
+/* Gradient background on hover */
+header:hover .gradient-background {
+  opacity: 0.3;
+}
+
+/* Header text styles */
+header h1 {
+  font-size: clamp(1.3rem, 4vw + 1rem, 2.5rem);
+}
+
+header h1,
+header p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Positioning the header content */
+.header-content {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  text-align: right;
+  transition: transform 0.1s ease;
+  color: white;
+}
+
+/* Gradient background in the header */
+.gradient-background {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 350px;
-  height: 300px;
-  object-fit: contain;
-
-  border-radius: 10px;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(51, 102, 153, 0.5) 20%,
+    rgba(0, 0, 0, 0) 80%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
+/*------------------------------ Navigation Menu ------------------------------*/
+/* Styling the navigation bar */
+nav {
+  background-color: #333;
+  border-bottom: 3px solid #5f5757;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Navigation menu list */
+.nav-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  display: flex;
+}
+
+/* Navigation menu items */
+.nav-menu > li {
+  float: left;
+  margin-right: 20px;
+}
+
+/* Styling for navigation links */
+.nav-menu > li > a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-menu > li > a:hover {
+  background-color: #111;
+}
+
+/* Dropdown menu styling */
 .dropdown {
   display: none;
   position: absolute;
@@ -158,87 +188,65 @@ ul li {
   background-color: #ddd;
 }
 
-.gradient-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    circle,
-    rgba(51, 102, 153, 0.5) 20%,
-    rgba(0, 0, 0, 0) 80%
-  );
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.header {
-  margin: 20px;
-}
-
-.header-content {
-  position: absolute;
-  top: 50%;
-  right: 10%;
-  transform: translateY(-50%);
-  text-align: right;
-  transition: transform 0.1s ease;
-  color: white;
-}
-
-.nav-menu {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  display: flex;
-  list-style: none;
-}
-
-.nav-menu > li {
-  float: left;
-  margin-right: 20px;
-}
-
-.nav-menu > li > a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.nav-menu > li > a:hover {
-  background-color: #111;
-}
-
+/* Show dropdown on hover */
 .nav-menu > li:hover .dropdown {
   display: block;
 }
-.social_media {
-  display: flex; /* Use flexbox for the container */
-  justify-content: flex-end; /* Align items to the right */
-  align-items: center; /* Center the items vertically */
-  margin-top: 10px; /* Adjust spacing from the nav above */
+
+/*------------------------------ Certifications Section ------------------------------*/
+/* Flexbox styling for certifications section */
+.certifications {
+  max-width: 350px;
+  padding: 20px 10px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }
 
+/* Image styling for certifications */
+.cube {
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/*------------------------------ Social Media Bar in the Footer ------------------------------*/
+/* Footer layout using flexbox */
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+/* Flexbox styling for social media container */
+.social_media {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Social media icon styling */
 .social-icons {
-  display: flex; /* Make this a flex container */
+  display: flex;
 }
 
 .social-icons a {
-  margin-left: 10px; /* Space between icons */
+  margin-left: 10px;
 }
 
+/* Social media icons hover effect */
 .social-icons img {
-  width: 30px; /* Fixed size for images */
+  width: 30px;
   height: 30px;
-  transition: transform 0.3s ease; /* Adds a smooth scaling effect */
+  transition: transform 0.3s ease;
 }
 
 .social-icons img:hover {
-  transform: scale(1.1); /* Slightly enlarges the icon on hover */
+  transform: scale(1.1);
 }
