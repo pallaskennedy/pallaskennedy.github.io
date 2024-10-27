@@ -15,8 +15,8 @@
     <meta name="author" content="FreeCodeCamp.org" />
 
     <title >Survey Form</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/survey_styling.css" />
+    <link rel="stylesheet" href="../Styling/styles.css" />
+    <link rel="stylesheet" href="../Styling/survey_styling.css" />
   </head>
   <body>
     <header class="header">
@@ -355,11 +355,11 @@
       </p>
       <div class="separator"></div>
     </footer>
+
+    <!-- Update the displayed value when the slider in section 4 is moved -->
     <script>
       const slider = document.getElementById('rating');
       const output = document.getElementById('rating-value');
-    
-      // Update the displayed value when the slider is moved
       slider.oninput = function () {
         output.textContent = this.value;
       };

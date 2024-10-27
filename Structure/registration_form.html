@@ -14,8 +14,8 @@
     <meta name="author" content="FreeCodeCamp.org" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration Form</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/registration_form_styling.css" />
+    <link rel="stylesheet" href="../Styling/styles.css" />
+    <link rel="stylesheet" href="../Styling/registration_form_styling.css" />
   </head>
   <body>
     <header class="header">
@@ -28,24 +28,7 @@
     <main class="main">
       <h1>Registration Form</h1>
       <p>Please fill out this form with the required information</p>
-      <!--The method attribute specifies how to send form-data to the URL specified 
-    in the action attribute. The form-data can be sent via a GET request as URL
-     parameters (with method="get") or via a POST request as data in the request 
-     body (with method="post").
 
-     Specifying the type attribute of a form element is important for the browser 
-     to know what kind of data it should expect. If the type is not specified, 
-     the browser will default to text.
-
-     The first input element with a type of submit is automatically set to 
-     submit its nearest parent form element. To handle the form submission, 
-     after the last fieldset element add an input element with the type attribute 
-     set to submit and the value attribute set to Submit.
-     
-     minlength=8 sets the minimum length of a password to 8 chars
-     Even stronger is the regex: pattern=[a-z0-5]{8,}  which states the password
-     must contain lowercase letters a to z, digits 0 to 5 and be 8 chars in length.
-     -->
       <form action="https://register-demo.freecodecamp.org" method="POST">
         <fieldset>
           <label for="first-name"

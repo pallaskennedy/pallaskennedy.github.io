@@ -1,0 +1,534 @@
+/* The use of square brackets in CSS selectors, like nav[aria-label="Breadcrumb"], allows you to select elements based on 
+their attributes. In this case, it’s a CSS attribute selector, which targets the nav element that contains a specific 
+aria-label attribute with the value "Breadcrumb". */
+nav[aria-label="Breadcrumb"] ul {
+  list-style: none;
+  display: flex;
+}
+
+nav[aria-label="Breadcrumb"] span + span::before {
+  content: ">";
+  padding: 0 5px;
+}
+
+/*--------------------------------------------------- Selectors ---------------------------------------------------*/
+
+/*  Use an id='name' on the html for a unique element that appears only once on the page. 
+id is selected with #ID on the stylesheet.
+
+Use .class='name' in the html for styling or functionality that will apply to multiple 
+elements. 
+class is selected with .class in the stylesheet. 
+
+
+A pseudo-selector in CSS is used to style elements based on their __behavior, state or position__ 
+in the document, even if those states aren’t explicitly defined in the HTML
+	•	Single colon (:) is used for pseudo-classes.
+	•	Pseudo-classes apply styles based on the state or behavior of an element (like hover, focus, etc.).
+  Common pseudo-classes:
+	•	:hover (when hovering over an element)
+	•	:focus (when an element is focused)
+	•	:nth-child()
+
+  	•	Double colon (::) is used for pseudo-elements.
+	•	Pseudo-elements __style parts of an element__ (like inserting content or styling part of text) without altering 
+  the document structure.
+  Common pseudo-elements:
+	•	::before (inserts content before an element)
+	•	::after (inserts content after an element)
+	•	::first-letter (targets the first letter of a block of text)
+	•	::selection (styles text that’s selected by the user)
+*/
+
+/* star selector selects everything */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding & borders are included in element width/height */
+}
+/*The box-sizing property is used to set this behavior. By default, the content-box model is used. With this model, 
+when an element has a specific width, that width is calculated based only on the element's content. Padding and border
+ values get added to the total width, so the element grows to accommodate these values.
+ The border-box sizing model does the opposite of content-box. The total width of the element, including padding and 
+ border, will be the explicit width set. The content of the element will shrink to make room for the padding and border.
+*/
+
+/* You can add style to an element by specifying it in the style element and setting a property for it : */
+
+/* Center the content of the h1 element by setting its text-align property to the value center. */
+/* Understanding text-align
+
+	1.	Purpose of text-align:
+	•	The text-align property is used to set the horizontal alignment of inline content within a block-level container. 
+  It applies to all inline elements inside that container, not just text.
+	2.	Effects on Various Content Types:
+	•	Text: Aligns the text to the specified position (left, right, center, justify).
+	•	Images: If you have an <img> tag inside the container, text-align will also affect the alignment of the image. For 
+  example, if you set text-align: center; on a <div>, any images inside that <div> will be centered as well.
+	•	Other Inline Elements: It will also affect any other inline elements (like <span>, <a>, etc.) within the container.
+ 
+ Key Points
+	•	Block-level vs. Inline Elements: The text-align property is applied to block-level containers (like <div>, <p>, 
+  <section>, etc.), affecting the alignment of their inline contents.
+	•	Not for Block Elements: If you have block-level elements inside (like another <div>), those elements won’t be affected 
+  by text-align. They will behave according to their default display properties or any other layout properties applied 
+  (like float, flex, or grid).
+
+  Block vs. Inline Elements
+
+	1.	Block Elements:
+	•	Block elements (like <div>, <p>, <section>, etc.) take up the full width of their parent container by default and 
+  stack vertically.
+	•	To control their layout or alignment, you typically use properties like display, flex, grid, or float.
+
+  Flexbox and Text Alignment Together
+
+	1.	display: flex;:
+	•	When you set a container to display: flex;, it creates a flex context for its direct child elements (flex items).
+	•	You can then use justify-content to control the horizontal alignment of these flex items and align-items to control their 
+  vertical alignment.
+	•	This affects all child elements within the flex container, regardless of whether they are block-level or inline elements.
+	2.	text-align: center;:
+	•	The text-align property is specifically for aligning inline content (like text or inline images) within a block-level 
+  container.
+	•	When applied to a flex container, it will only affect the inline content of its child elements but does not change the 
+  layout of the flex items themselves.
+
+  <div class="container" style="display: flex; justify-content: center; align-items: center;">
+    <div class="text-container" style="text-align: center;">
+        <span>Centered Text</span>
+        <img src="image.jpg" alt="Example Image">
+    </div>
+    <div>
+        <p>Another Block Element</p>
+    </div>
+</div>
+
+What Happens Here
+
+	•	Flex Container: The outer <div class="container"> is a flex container, so it manages the layout of its child elements 
+  (the inner <div> and <p>).
+	•	Flex Item Layout: justify-content: center; centers the inner flex items horizontally within the container.
+	•	Inline Content Alignment: Inside the .text-container, text-align: center; centers the inline content (the <span> and
+   <img>) within that inner block.
+
+Key Points
+
+	•	Both properties work on the container level, but they serve different purposes.
+	•	Flexbox properties control the overall layout and positioning of child elements, while text-align is for aligning 
+  inline content within block elements.
+
+vertical-align
+
+	•	Used for: Inline elements, table cells, and images within a line of text.
+	•	How it works: vertical-align controls the vertical positioning of inline or inline-block elements relative to their surrounding content (like aligning text and images next to each other).
+	•	Common values:
+	•	baseline
+	•	top
+	•	middle
+	•	bottom
+  
+align-items
+
+	•	Used for: Flexbox containers (elements with display: flex or display: inline-flex).
+	•	How it works: align-items controls the alignment of flex items along the cross axis (usually the vertical axis) within the flex container. It is used with flex layouts to align items inside the container.
+	•	Common values:
+	•	flex-start (aligns items to the top of the container)
+	•	center (aligns items in the center)
+	•	flex-end (aligns items to the bottom of the container)
+	•	stretch (stretches items to fill the container)
+ */
+/* Styling for the flex container */
+.flex-container {
+  display: flex; /* Enables flexbox layout */
+  justify-content: center; /* Centers items horizontally */
+  align-items: center; /* Centers items vertically */
+  height: 20vh; /* Sets the height of the container to full viewport height */
+  background-color: #f0f0f0; /* Light gray background */
+  border: 2px solid #d0d05d; /* Light yellow-green border */
+  margin: 20px 20px;
+}
+
+/* Styling for the flex items */
+.flex-item {
+  background-color: #ffd700; /* Gold background for flex items */
+  color: #555; /* Dark gray text color */
+  padding: 1rem; /* Padding around the content */
+  margin: 3rem; /* Margin between items */
+  border-radius: 5px; /* Rounded corners */
+  text-align: center; /* Center text within the flex items */
+}
+.flex-item img {
+  padding: 1px; /* Padding around the content */
+  border-radius: 5px; /* Rounded corners */
+  max-width: 100%; /* Allow images to scale */
+  height: 100px; /* Set a specific height */
+  object-fit: cover; /* Ensure images cover the area without distortion */
+}
+h1 {
+  text-align: center;
+}
+
+/* You can add the same group of styles to many elements by creating a comma seperated list of selectors. */
+/*  change the background-color property to brown for the body element. */
+h2,
+p {
+  text-align: center;
+}
+
+/* background-size property
+Cover (Most Common for Full-Page Backgrounds): Ensures the background image covers the entire area of the element, 
+  while maintaining its aspect ratio. Parts of the image may be cropped.
+Contain:	Ensures the entire background image is visible without being cropped, but it may not cover the whole 
+element if the aspect ratio doesn’t match.
+Specific Width/Height Values:	You can specify the width and height in units such as pixels, percentages, or viewport 
+units (vw and vh).
+Repeat or No-Repeat: Control whether the image repeats to fill the entire element:
+ Background Position: You can also control where the background image starts, e.g., centering it or aligning it to a
+  specific corner:
+ */
+body {
+  position: relative; /* Sets the body to a relative position to establish a context for the pseudo-element (::before) */
+}
+
+body::before {
+  content: ""; /* Creates an empty content block for the pseudo-element (::before) */
+  position: absolute; /* Positions the pseudo-element absolutely relative to the body */
+  top: 0; /* Aligns the top edge of the pseudo-element with the top of the body */
+  left: 0; /* Aligns the left edge of the pseudo-element with the left side of the body */
+  width: 100%; /* Makes the pseudo-element span the entire width of the body */
+  height: 100%; /* Makes the pseudo-element span the entire height of the body */
+  background-image: url("../images/beans.jpg"); /* Sets the background image for the pseudo-element */
+  background-size: contain; /* Ensures the background image scales to fit within its container */
+  background-repeat: no-repeat; /* Prevents the image from repeating if it's smaller than the container */
+  background-position: center; /* Centers the image within the pseudo-element */
+  opacity: 0.2; /* Makes the image semi-transparent by adjusting the opacity */
+  z-index: -1; /* Ensures the pseudo-element stays behind all other content (negative stacking order) */
+}
+
+/* You can use the id selector to target a specific element with an id attribute. An id selector is defined by 
+placing the hash symbol # directly in front of the element's id value */
+#menu {
+  width: 80%; /*Make the width 80% its parent element (body).*/
+  text-align: center; /*center the inner elements */
+  background-color: burlywood;
+  margin-left: auto; /* Center the #menu horizontally.*/
+  margin-right: auto; /* Center the #menu horizontally.*/
+}
+#image-width {
+  width: 80%;
+}
+
+/* A class selector is defined by a name with a dot directly in front of it.*/
+.sections {
+  background-color: aliceblue;
+  width: 60%;
+  text-align: center;
+  margin-left: auto; /* Center the #menu horizontally.*/
+  margin-right: auto; /* Center the #menu horizontally.*/
+}
+.articles {
+  background-color: aquamarine;
+  width: 60%;
+}
+
+/* The :not pseudo-selector can be used to select all elements that do not match the given CSS rule.
+any div element not marked with id="example" will be in red ink.*/
+div:not(#example) {
+  color: red;
+}
+/*  target the first span element in your .flex container. Remember that your span elements are reversed, visually, so 
+this will appear to be the second element on the page. */
+h1 .flex span:first-of-type {
+  font-size: 0.7em;
+}
+
+/* The :last-of-type pseudo-selector does the exact opposite - it targets the last element that matches the selector. 
+ */
+/* target the last span in your flex container, and give it a font-size property set to 1.2em to make it look like a 
+header. */
+h1 .flex span:last-of-type {
+  font-size: 1.2em;
+}
+
+/* enable flexbox, justify the content to the end of the flex direction, and make the element sticky.  */
+/* CSS property position: sticky. This allows the element to “stick” to a specific position (like the top of the 
+page or a container) when scrolling, until another part of the layout pushes it away. */
+/* Why Use Sticky Positioning?
+
+	1.	Improves User Experience:
+	•	Sticky elements, like a navigation bar, stay visible while the user scrolls, making important information or tools
+   (like menus) always accessible without needing to scroll back up.
+	2.	Keeps Important Content Visible:
+	•	Sticky positioning is great for headers, floating menus, or call-to-action buttons that you want to remain visible 
+  as the user reads through the content. For example, sticky headers are common in tables to keep column labels in view.
+	3.	Non-Intrusive:
+	•	Unlike fixed positioning, sticky elements only stay stuck when the user scrolls past their initial position, and 
+  they become “unstuck” when necessary, allowing the page to flow naturally.
+
+When to Use:
+
+	•	Sticky navigation bars or menus
+	•	Section headers that should stay visible as you scroll through content
+	•	Floating buttons for actions like “Back to Top”
+	•	Table headers that stay at the top while scrolling through large datasets
+
+This positioning works well in responsive layouts, as long as it’s used with care, ensuring the sticky element doesn’t 
+obstruct 
+other important content on smaller screens. */
+/* The calc() function is a CSS function that allows you to calculate a value based on other values. For example, you 
+can use it to calculate the width of the viewport minus the margin of an element: */
+
+#sticky-nav {
+  display: flex; /* Makes the container a flexbox for flexible alignment of child elements */
+  justify-content: flex-end; /* Aligns child elements to the end (right side) of the container */
+
+  position: sticky; /* Makes the element stick to the top of the viewport when scrolling */
+  top: 0; /* Specifies that the sticky element should start sticking at the top of the viewport */
+
+  color: #fff; /* Sets the text color to white for contrast against the background */
+  background-color: lightsteelblue; /* Provides a light blue background for visibility */
+
+  margin: 0 -2px; /* Adjusts spacing around the navigation bar */
+
+  padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0; /* Adds padding for space around content; calc() allows dynamic sizing */
+
+  z-index: 999; /* Ensures the sticky navigation bar appears above other elements on the page */
+}
+
+#sticky-nav span[class] {
+  font-weight: bold;
+  width: 4.5rem;
+  text-align: right;
+}
+
+/* The z-index property in CSS controls the stacking order of elements along the z-axis (depth). Here’s a quick breakdown:
+
+	•	Positive values (like z-index: 999;): These place the element in front of others with lower or no z-index values.
+	•	Negative values (like z-index: -1;): These send the element to the back, behind other elements with a higher z-index 
+  or no z-index at all.
+	•	Default value: If you don’t specify a z-index, the element will be layered based on the order it appears in the HTML, 
+  with later elements in the source code appearing on top of earlier ones.
+
+Just remember that for z-index to work, the element must be positioned (using position: relative;, position: absolute;, 
+or position: fixed;). */
+
+/*--------------------------------------------------- Color  ---------------------------------------------------*
+ With hex colors, 00 is 0% of that color, and FF is 100%. So #00FF00 translates to 0% red, 100% green, 
+ The HSL color model, or hue, saturation, and lightness, is another way to represent colors.
+ The CSS hsl function accepts 3 values: a number from 0 to 360 for hue, a percentage from 0 to 100 
+ for saturation, and a percentage from 0 to 100 for lightness.
+ If you imagine a color wheel, the hue red is at 0 degrees, green is at 120 degrees, and blue 
+ is at 240 degrees.
+ Saturation is the intensity of a color from 0%, or gray, to 100% for pure color. You must include
+ the percent sign % to the saturation and lightness values.
+ Lightness is how bright a color appears, from 0%, or complete black, to 100%, complete white, 
+ with 50% being neutral.
+
+  If no gradientDirection argument is provided to the linear-gradient function, it arranges colors from 
+  top to bottom, or along a 180 degree line, by default.
+
+Color-stops allow you to fine-tune where colors are placed along the gradient line. They are a length 
+ unit like px or percentages that follow a color in the linear-gradient function. The linear-gradient 
+ function automatically calculates these values for you, and places colors evenly along the gradient 
+ line by default.  They color-stop values in .red are unnecessary
+
+box-shadow: offsetX offsetY blurRadius spreadRadiuscolor; 
+  both offsetX and offsetY accept number values in px and other CSS units
+  a positive offsetX value moves the shadow right and a negative value moves it left
+  a positive offsetY value moves the shadow down and a negative value moves it up
+  if you want a value of zero (0) for any or both offsetX and offsetY, you don't need 
+  to add a unit. Every browser understands that zero means no change.
+  The height and width of the shadow is determined by the height and width of the element 
+  it's applied to. You can also use an optional spreadRadius value to spread out the reach 
+  of the shadow. More on that later.
+  If a blurRadius value isn't included, it defaults to 0 and produces sharp edges. The higher
+  the value of blurRadius, the greater the blurring effect is.
+
+ With the CSS opacity property, you can control how opaque or transparent an element is.
+ With the value 0, or 0%, the element will be completely transparent, and at 1.0, or 100%, 
+ the element will be completely opaque like it is by default.
+
+ alpha channel also controls opacity using rgba(redValue, greenValue, blueValue, alphaValue);
+
+inline-block elements only take up the width of their container which might necessitate a 
+  width property that container 
+
+
+
+
+/*--------------------------------------------------- Meaurements ------------------------------------------------*
+The vh unit stands for viewport height, and is equal to 1% of the height 
+   of the viewport. This makes it relative to the viewport height. Best not
+   used for text sizing.
+
+em (element): The unit is relative to the font size of the parent element.  
+  It is particularly useful for components that should scale with a local
+  container’s size.  For example, if a parent element has a font size of 
+  16px and you set {padding: 2em;}, the padding will be 2 * 16px = 32px.
+	
+rem (root element): The unit is relative to the font size of the root (HTML)
+   element, typically defined as 16px by default in most browsers. You need 
+   consistent sizing based on the root element’s font size (usually for global 
+   scaling). It’s ideal when you want to keep sizes consistent across the whole 
+   page, regardless of local font size changes. 1rem always equals the root 
+   font size, regardless of the font size of parent elements.
+
+
+
+
+/*--------------------------------------------------- Direction ---------------------------------------------------*
+   direction notation   
+  padding: top right bottom left;
+  padding: 2rem 0 2rem 0;
+
+  padding: top-bottom left-right; 
+  padding: 2rem 0;
+
+  padding: all-directions;
+  padding: 2rem;
+*/
+
+/*--------------------------------------------------- THE CASCADE ---------------------------------------------------*/
+/*
+    The cascade in CSS refers to the way styles are applied to elements based on their specificity and the order
+        in which they are defined. Here’s a breakdown of how CSS rules interact, including inline, internal, and 
+        external styles:
+
+    1. Inline Styling is applied directly within an HTML element using the style attribute. 
+        <h1 style="color: blue;">Hello World</h1>
+        Inline styles have the highest specificity and will override styles defined in both 
+        internal and external stylesheets, regardless of their order.
+
+    2. Internal Styling is defined within a <style> tag in the <head> section of an HTML document. Internal 
+        styles have a lower specificity than inline styles but higher than external styles. If an internal 
+        style conflicts with an external style, the internal style will take precedence if it comes later 
+        in the stylesheet.
+
+    3. External Styling is defined in a separate CSS file linked to an HTML document using the <link> tag. 
+        External styles have the lowest specificity compared to inline and internal styles. If an external 
+        style conflicts with an internal style or an inline style, those latter styles will take precedence.
+        !important: A rule can be made to take precedence over all other rules by appending !important to 
+        the property.
+        h1 {
+            color: green !important;
+            }
+
+    4. Specificity and Importance
+
+        If multiple styles apply to the same element, the browser determines which one to use based on 
+        specificity:
+        Specificity Ranking
+
+        1.	Inline Styles (highest)
+        2.	IDs  #myElement { color: blue; }
+        3.	Classes .myClass { color: red; }
+        4.	Type Selectors (lowest) These are the actual HTML element names.  p { color: green; }
+
+    Specificity Calculation
+        To illustrate your example with an element having a class, an ID, and a type selector all targeting 
+        the same property (color):
+        <p id="myParagraph" class="myClass">Hello, World!</p>   
+            #myParagraph { color: blue; }     ID selector 
+            .myClass { color: red; }           Class selector 
+            p { color: green; }                Type selector 
+
+    Result:  Hello, World! will be blue
+    */
+
+/*
+
+    <!--It's better practice to choose one color as the dominant color, and use its complementary 
+        color as an accent to bring attention to certain content on the page.
+        Two colors that are opposite from each other on the color wheel are called complementary colors. 
+        If two complementary colors are combined, they produce gray. But when they are placed side-by-side, 
+        these colors produce strong visual contrast and appear brighter.
+        rgb(255,0,0) & rgb(0,255,255) are opposite each other.-->
+    <!--
+        With hex colors, 00 is 0% of that color, and FF is 100%. So #00FF00 translates to 0% red, 100% green, 
+        and 0% blue, and is the same as rgb(0, 255, 0).  FF -> 255, 7F -> 127
+        -->
+    <!--The HSL color model, or hue, saturation, and lightness, is another way to represent colors.
+        The CSS hsl function accepts 3 values: a number from 0 to 360 for hue, a percentage from 0 to 100 
+        for saturation, and a percentage from 0 to 100 for lightness.
+        If you imagine a color wheel, the hue red is at 0 degrees, green is at 120 degrees, and blue 
+        is at 240 degrees.
+        Saturation is the intensity of a color from 0%, or gray, to 100% for pure color. You must include 
+        the percent sign % to the saturation and lightness values.
+        Lightness is how bright a color appears, from 0%, or complete black, to 100%, complete white, 
+        with 50% being neutral.-->
+*/
+
+/*----------------------------------------------------- WORKFLOW -----------------------------------------------------*/
+/* 1. Reset/Normalize Styles (optional): 
+This is like wiping down the surfaces of your house before decorating it. You’re just getting everything clean and 
+neutral and ensuring that every browser starts from the same level. It helps eliminate default styles that can cause 
+inconsistencies across different browsers, giving you a clean slate to work from.   */
+
+/* 2. Global Styles
+Set the baseline styles for the html page. This is like ensuring that every room in a house has a cohesive look. This is 
+where you actually decorate—choosing colors, fonts, and spacing that define the look and feel of your site. Use only 
+general selectors like body, headings, paragraphs, images, links, figcaptions, buttons, and form elements. This includes 
+defining global font sizes, colors, and spacing. You can always go back and adjust specific rooms later if needed. */
+
+/* 3. Layout Styles 
+Define styles for the overall structure of the webpage. Think of this as styling the different rooms in the house: headers, 
+footers, navigation, main, etc. In this section, you can use #ID or .class selectors to style these structural elements, 
+ensuring that the layout is visually organized and functional. */
+
+/* 4. Component Styles 
+This section is for styling specific components or modules of the webpage, like buttons, forms, cards, and other distinct 
+elements. Think of it as customizing individual walls and windows in each room of your house to give them their unique look 
+and functionality. This is where you can apply specific styles to enhance the appearance and usability of these elements 
+without affecting the overall layout or global styles. */
+
+/* 5. Utility Classes
+Create simple, reusable styles for things like spacing (margin and padding), and text alignment. You can use these classes 
+anywhere on your site to make it look nice and consistent! */
+
+/* 6. Media Queries (Optional)
+Add styles here that help your website look good on different screen sizes (like phones and tablets). Put these at the end 
+of your stylesheet so they can change the styles that came before them if needed. */
+
+/* CSS */
+/* Positioning */
+/* Box Model */
+/* Flexbox/Grid */
+/* Typography */
+/* Backgrounds */
+/* Effects and Transitions */
+/* Miscellaneous */
+
+/*
+
+Suggested Order of CSS Properties
+
+	1.Positioning
+      •	position
+      •	top, right, bottom, left
+      •	z-index
+	2.Box Model
+      •	display
+      •	width, height
+      •	margin, padding, border (including border-width, border-style, border-color)
+	3.Flexbox/Grid (if applicable)
+      •	flex properties (like flex-direction, justify-content, align-items)
+      •	grid properties (like grid-template-columns, grid-template-rows)
+	4.Typography
+      •	font-family
+      •	font-size
+      •	font-weight
+      •	line-height
+      •	color
+      •	text-align, text-decoration, text-transform
+	5.Backgrounds
+      •	background-color
+      •	background-image
+      •	background-size, background-position, background-repeat
+	6.Effects and Transitions
+      •	opacity
+      •	box-shadow
+      •	transition, transform
+	7.Miscellaneous
+      •	Any additional properties, such as overflow, cursor, or any specific styles related to your design.
+  */
