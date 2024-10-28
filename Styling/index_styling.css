@@ -37,18 +37,6 @@ p {
   line-height: 25px;
 }
 
-/* H3 styling */
-h3 {
-  margin: 10px 0 0 0;
-  padding: 0;
-  width: 480px;
-  height: 35px;
-  border: 1px solid #fff;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
 /* Unordered lists */
 ul {
   list-style: none;
@@ -66,7 +54,7 @@ ul li {
   color: #369;
 }
 
-/*------------------------------ Header Section ------------------------------*/
+/*------------------------------ HEADER SECTION  ------------------------------*/
 /* Header background image and layout */
 header {
   position: relative;
@@ -79,6 +67,7 @@ header {
 }
 
 /* Gradient background on hover */
+/* mouseover effects also require the js file */
 header:hover .gradient-background {
   opacity: 0.3;
 }
@@ -122,7 +111,7 @@ header p {
   transition: opacity 0.3s ease;
 }
 
-/*------------------------------ Navigation Menu ------------------------------*/
+/*------------------- Navigation Menu ------------------*/
 /* Styling the navigation bar */
 nav {
   background-color: #333;
@@ -193,8 +182,97 @@ nav {
   display: block;
 }
 
-/*------------------------------ Certifications Section ------------------------------*/
-/* Flexbox styling for certifications section */
+/*--------------------------------- MAIN CONTENT  ------------------------------*/
+
+/*------ Philosophy Grid --------*/
+.philosophy {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1920px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 0 20px; /* Add padding to the left and right edges */
+}
+
+.philosophy-grid {
+  display: flex; /* Use flexbox for alignment */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  justify-content: space-between; /* Space the boxes evenly */
+  align-items: flex-start; /* Align items to the top */
+  /* gap: 16px; Add space between the boxes */
+  width: 100%; /* Make sure it occupies the full width */
+}
+
+/* H3 styling */
+h3 {
+  margin: 10px 0 0 0;
+  padding: 0;
+  border: 1px solid #fff;
+  text-indent: 10px; /* Smaller indentation */
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 24px;
+  font-family: "Segoe UI", "Lato", Arial, sans-serif;
+  font-weight: 400;
+}
+
+.pg-title-box {
+  text-align: center; /* Center the title box */
+  padding-top: 64px !important;
+  padding-bottom: 64px !important; /* Reduced padding below the title */
+}
+
+.pg-title-text {
+  font-size: 24px !important;
+  border-bottom: 6px solid #ccc !important;
+  border-color: #616161 !important;
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+
+.pg-quote-box {
+  flex: 1 1 calc(24%); /* Four boxes per row with gap adjustment */
+  min-height: 190px; /* Set a minimum height for all boxes */
+  padding: 16px; /* Add padding */
+  box-sizing: border-box; /* Include padding in the width */
+}
+
+/* Color classes */
+
+.pg-color1 {
+  background-color: #f2e6a5 !important;
+  color: #000 !important;
+}
+
+.pg-color2 {
+  background-color: #e6c463 !important;
+  color: #000 !important;
+}
+
+.pg-color3 {
+  background-color: #d1a222 !important;
+  color: #fff !important;
+}
+
+.pg-color4 {
+  background-color: #b8860b !important;
+  color: #fff !important;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 993px) {
+  .pg-quote-box {
+    flex: 1 1 calc(50% - 16px); /* Two boxes per row */
+  }
+}
+
+@media (max-width: 601px) {
+  .pg-quote-box {
+    flex: 1 1 100%; /* One box per row */
+  }
+}
+/* ----------------- Contuously Rotating Cube ----------------- */
+
 .certifications {
   max-width: 350px;
   padding: 20px 10px;
@@ -207,7 +285,19 @@ nav {
   gap: 16px;
 }
 
-/* Image styling for certifications */
+/* CSS perspective  */
+.wrap {
+  perspective: 800px;
+  perspective-origin: 50% 100px;
+}
+/* the cube is 200px wide 
+  relative positioning keeps the faces within bounds
+  preserve-3d makes it 3d instead of flat*/
+.cube {
+  position: relative;
+  width: 200px;
+  transform-style: preserve-3d;
+}
 .cube {
   width: 100%;
   max-width: 350px;
@@ -215,8 +305,127 @@ nav {
   object-fit: contain;
   border-radius: 10px;
 }
+/* position and dimensions of each face are set */
+.cube div {
+  position: absolute;
+  width: 200px;
+  height: 155px;
+}
+/* Transformation of the individual faces */
+.back {
+  transform: translateZ(-100px) rotateY(180deg);
+  background-color: #eee;
+}
+.right {
+  transform: rotateY(-270deg) translateX(100px);
+  transform-origin: top right;
+  background-color: #eee;
+}
+.left {
+  transform: rotateY(270deg) translateX(-100px);
+  transform-origin: center left;
+  background-color: #eee;
+}
+.top {
+  transform: rotateX(-90deg) translateY(-100px);
+  transform-origin: top center;
+  background-color: #eee;
+}
+.bottom {
+  transform: rotateX(90deg) translateY(100px);
+  transform-origin: bottom center;
+  background-color: #eee;
+}
+.front {
+  transform: translateZ(100px);
+  background-color: #eee;
+}
 
-/*------------------------------ Social Media Bar in the Footer ------------------------------*/
+/* Horizontal Spin */
+@keyframes spin {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.cube {
+  animation: spin 10s infinite linear;
+}
+
+/* ---------------- Message from Albert Einstein -------------------- */
+
+.AE-panel:after,
+.AE-panel:before {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*---------------- ascii art ----------------*/
+.ascii-art {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; /* Align items vertically */
+  white-space: nowrap; /* Prevent wrapping */
+  width: 100%; /* Ensures it takes up full width */
+}
+
+.ascii-art span {
+  display: inline-block; /* Keep elements inline */
+}
+
+/*----------- Animated box -----------*/
+.animated-box {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom right, #f2e6a5, #b8860b);
+  border-radius: 20px;
+  box-shadow: inset 0px 0px 40px black;
+  transform: rotateX(20deg);
+  perspective: 1000px;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.color-change {
+  text-align: center;
+  color: white;
+  text-shadow: 0px 15px 5px black;
+  perspective: 700px;
+  font-size: 70px;
+  transform: rotateX(50deg);
+  transition: all 0.3s ease;
+}
+
+.magic {
+  transform: translateY(-50px) scale(1.9) rotate(-10deg);
+}
+
+/*---------- Albert Einstein Quote ----------------*/
+
+.AEQuote {
+  padding: 0.01em 16px;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  color: #000 !important;
+  background-color: #f1f1f1 !important;
+  border-left: 6px solid #ccc !important;
+  font-family: serif;
+  font-style: italic;
+}
+/*------------------------------ FOOTER SECTION  ------------------------------*/
+
+/*---------- Social Media Bar ----------------*/
 /* Footer layout using flexbox */
 footer {
   display: flex;

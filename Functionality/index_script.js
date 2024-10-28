@@ -1,3 +1,4 @@
+// ------- Mouseover gradient effect in the header  --------------------
 const gradientDiv = document.querySelector(".gradient-background");
 const header = document.getElementById("header");
 const headerContent = document.querySelector(".header-content");
@@ -13,22 +14,23 @@ document.addEventListener("mousemove", (event) => {
   // Update the background gradient to follow the mouse
   gradientDiv.style.background = `radial-gradient(at ${xPercent}% ${yPercent}%, rgb(51, 102, 153), rgb(0, 0, 0))`;
 });
+// ----------------------------------------------------------------------
+//
+//
+// -------------------- Animated Text Box  --------------------
+let i = 0,
+  j = 0;
+const letters = document.querySelectorAll(".color-change");
+setInterval(() => {
+  if (i >= 25) i = 0;
+  letters[i].classList.add("magic");
+  if (!(j == 0 && i == 0)) {
+    letters[j].classList.remove("magic");
+  }
+  j = i;
+  i++;
+}, 80);
 
-// header.addEventListener("mousemove", (e) => {
-//   const { clientX, clientY } = e;
-//   const { offsetWidth, offsetHeight } = header;
-
-//   // Calculate the center of the header
-//   const x = (clientX / offsetWidth) * 100; // percentage of the width
-//   const y = (clientY / offsetHeight) * 100; // percentage of the height
-
-//   // Adjust the position of the header content based on mouse position
-//   const moveX = 0; // No horizontal movement, keep it aligned to the right
-//   const moveY = (y - 50) * 0.2; // Adjust multiplier for desired effect
-
-//   headerContent.style.transform = `translateY(-50%) translate(${moveX}px, ${moveY}px)`;
-// });
-
-// header.addEventListener("mouseleave", () => {
-//   headerContent.style.transform = "translateY(-50%)"; // Reset position when mouse leaves
-// });
+// ----------------------------------------------------------------------
+//
+//
