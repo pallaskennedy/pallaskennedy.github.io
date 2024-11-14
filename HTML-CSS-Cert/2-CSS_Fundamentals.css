@@ -1,0 +1,161 @@
+/* 2. CSS Fundamentals 
+2.1 Analyze and implement inline styles, internal (embedded) style sheets, and external style sheets 
+• When to use inline styles, internal (embedded) style sheets, or external style sheets; precedence when 
+using a combination of inline styles and style sheets; browser default style 
+2.2 Construct and analyze rule sets 
+• Valid syntax for the CSS rule set, selectors (class, id, elements, and pseudoclass and descendent) 
+ */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* Inline Styles
+
+	•	When to Use:
+	•	For applying a style to a specific element directly.
+	•	Useful for quick, one-off styling or when you need to override other styles.
+	•	When styles need to be applied dynamically (via JavaScript).
+
+	•	Example Use Cases:
+	•	Changing the color of a button when clicked.
+	•	Overriding styles for a single element on a page, for example, <h1 style="color: red;">Welcome</h1>.
+
+	•	Drawbacks:
+	•	Styles cannot be reused across multiple elements.
+	•	Inline styles make it harder to maintain and scale the page’s design.
+	•	Reduces separation of concerns between content and presentation.
+ */
+/* Internal (Embedded) Style Sheets
+
+ •	When to Use:
+ •	When you want to style a page specifically and don’t want to create a separate CSS file.
+ •	For small projects or prototypes, or when styles are specific to a single page and won’t be reused.
+ •	For overriding external styles when it is difficult to modify the linked stylesheet.
+
+ •	Example Use Cases:
+ •	For a single-page website or a section-specific style.
+ •	Styling HTML elements within the <head> tag using the <style> tag: <style> body { background-color: lightgray; } </style>.
+
+ •	Drawbacks:
+ •	Styles are not reusable across multiple pages.
+ •	The HTML file size increases because the styles are embedded within the page.
+ •	Less maintainable compared to using external stylesheets. */
+
+/* External Style Sheets
+
+ •	When to Use:
+ •	For larger projects or when you have multiple pages that need consistent styling.
+ •	When you want to separate your content (HTML) from your presentation (CSS) for easier maintenance and better code organization.
+ •	For reusability, allowing one stylesheet to be linked to multiple HTML files.
+
+ •	Example Use Cases:
+ •	Websites with multiple pages or large-scale web applications.
+ •	When styling is shared across many pages using the <link> tag in the <head> section: <link rel="stylesheet" href="styles.css">.
+
+ •	Drawbacks:
+ •	Requires an extra HTTP request to load the external stylesheet.
+ •	If the external file is large, it could slow down initial page load times. */
+
+/* The Cascade */
+/* Precedence */
+/* 	1.	Inline styles (within the HTML element itself, using the style attribute) – highest precedence.
+	2.	Internal (embedded) styles (within the <style> tags in the <head> section) – second highest.
+	3.	External styles (linked with <link> tags pointing to an external CSS file) – lowest precedence.
+ */
+/* Specificity */
+/* Inline (closest to the html) -> ID (unique) -> Class (created general) -> type selectors (most general) */
+
+/* If two conflicting styles apply at the same specificity level, the later one in the document will be used. */
+
+/* Browser Default Styles */
+/* 
+When to use browser default styles:
+
+	•	Prototyping or quick mockups
+	•	Minimal styling
+    •	Content-driven design (like blogs)
+    
+When not to rely on browser default styles:
+
+	•	Consistent design across browsers
+    •	Custom branding or theme
+    •	Interactive or complex layouts
+	•	Responsive design
+    
+Best practice: start with a CSS reset or normalize.css to ensure a more consistent baseline style across different browsers. 
+ */
+
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------------------- */
+/* Components of a CSS Rule Set:
+
+	1.	Selector: 
+            Identifies the HTML element(s) that the rule applies to. Can be an element type, class , id, or another CSS selector
+	2.	Declaration Block: 
+            Enclosed in curly braces {}, it contains one or more declarations separated by semicolons.
+	3.	Declarations: 
+            Each declaration consists of property: value; pair 
+            Property: Refers to the style property you want to change (e.g., color, font-size, background-color).
+	        Value: The value for that property (e.g., red, 16px, #ff0000).
+
+    General Notes:
+	    Whitespace: CSS ignores extra whitespace, so extra spaces or line breaks before or after the properties 
+            or values do not affect the outcome. However, for readability, it is best to keep consistent indentation and spacing.
+	    Commenting: CSS allows comments inside the rule set with comment marks. 
+            Comments do not affect the rendering of styles.
+	    Property-Value Pair: A valid property-value pair is needed. If an invalid property or value is used, 
+            the declaration will be ignored by the browser.
+             */
+/*  */
+element {
+  property: value;
+}
+p {
+  color: red;
+}
+/*  */
+.class-name {
+  property: value;
+}
+.first-marker {
+  font-size: 24px;
+}
+/*  */
+#id-name {
+  property: value;
+}
+#author-name {
+  background-color: lightblue;
+}
+element:pseudo-class {
+  property: value;
+}
+a:hover {
+  color: green;
+}
+
+p:first-child {
+  font-weight: bold;
+}
+
+/* 	Common Pseudo-classes:
+	•	:hover: When the element is hovered.
+	•	:first-child: Targets the first child element within its parent.
+	•	:nth-child(n): Targets elements based on their position in a parent (e.g., nth-child(2) targets the second child).
+	•	:focus: When an element (such as an input) is focused. */
+/*  */
+
+parent-element child-element {
+  property: value;
+}
+div p {
+  font-size: 18px;
+}
+div .first-marker {
+  font-size: 24px;
+}
+#author-name .first-marker {
+  font-size: 24px;
+}
+
+/* 	More specific selectors (like #id-name) will override more general ones (like p, div, etc.).
+	Combination of selectors can help target elements more precisely, e.g., targeting a class inside an element 
+        like div p or a:hover. */

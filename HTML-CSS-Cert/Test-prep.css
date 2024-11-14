@@ -1,0 +1,24 @@
+/* You are designing a webpage for your company. The page must be responsive so that it can 
+ be viewed on both mobile and desktop browsers.
+
+ On mobile browsers, or those with a screen width of less than 768 pixels you want to
+ display a welcome background image named SmalLogo.png.
+
+On all other browsers, you want to display a welcome background image named NormalLogo.png.
+
+How should you complete the code? To answer, select the appropriate code segment in the 
+answer area
+
+  -->
+ */
+
+.welcome {
+  background-color: blue;
+  background-image: url(NormalLogo.jpg);
+}
+
+@media (max-width: 768px) {
+  .welcome {
+    background-image: url(SmallLogo.jpg);
+  }
+}
