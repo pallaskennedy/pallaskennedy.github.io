@@ -1,0 +1,98 @@
+<!-- 3. Document Structure using HTML 
+3.4 Construct and analyze markup that uses form elements 
+    • Form attributes, action, method, submission methods, input types and restrictions, select, textarea, button, option, label 
+ -->
+
+<!-- ------------------------------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------------------------------------------------ -->
+<!-- BASICS -->
+<!-- <form> defines the form itself and includes attributes that control how the form behaves when submitted. -->
+<form action="/submit" method="post"></form>
+<!-- Data is sent in the HTTP request body -->
+<form action="submit.php" method="get"></form>
+<!-- Data is appended to the URL -->
+<!-- action: Specifies the URL where the form data is sent upon submission -->
+<!-- method: Defines how the form data is sent
+    GET: Sends data as part of the URL query string. Typically used for retrieving data.
+    POST: Sends data in the request body, typically used for submitting or updating data. -->
+
+<!-- FORM ELEMENT: INPUT  -->
+<input type="text" name="username" placeholder="Enter your name" />
+<input type="password" name="password" placeholder="Enter your password" />
+<input type="email" name="email" />
+<input type="number" name="age" />
+<input type="checkbox" name="subscribe" value="yes" checked /> Subscribe to
+newsletter <input type="radio" name="gender" value="male" checked /> Male
+<input type="radio" name="gender" value="female" /> Female
+<!-- <input> is used to capture user data in various formats. No closing tag.
+    type: Defines the type of data the input field should accept. 
+        text: Single-line text input.
+        password: Hides the entered text (useful for passwords)
+        email: Requires the input to be in a valid email format.
+        number: Allows only numerical input.
+        checkbox: Allows for selecting multiple options - checked sets it as default.
+        radio: Allows selecting only one option from a set - checked sets it as default and name value 
+            being the same allows for the data to be associated-->
+
+<!-- FORM ELEMENT: LABEL  -->
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" />
+<!-- <label>
+	•	Labels associate text with form elements, making forms more accessible and user-friendly. 
+        The for attribute should match the id of the corresponding form element. -->
+
+<!-- FORM ELEMENT: SUBMIT BUTTON -->
+<button type="submit">Submit</button>
+<input type="submit" value="Submit" />
+<!-- <button> or <input type="submit"> Triggers form submission. -->
+<input type="reset" value="Reset" />
+<!-- Reset Button: Clears all the fields in the form. It contains its own button and does not need a button tag -->
+
+<!-- FORM ELEMENT: TEXT AREA -->
+<textarea
+  name="comments"
+  rows="4"
+  cols="50"
+  placeholder="Enter your comments"
+></textarea>
+<!-- <textarea>  is for multi-line text input, useful for comments or longer text.
+    rows and cols sets the size of the input area.  placeholder puts dummmy text in it.-->
+
+<!-- FORM ELEMENT: DROPDOWN MENU -->
+<label for="cars">Choose a car:</label>
+<select name="cars" id="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+<!-- <select>, <option> allows users to select an option from a dropdown menu. -->
+
+<!-- FORM ELEMTENTS:  FIELDSET AND LEGEND -->
+<fieldset>
+  <legend>Personal Information</legend>
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname" />
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname" />
+</fieldset>
+<!-- <fieldset>:Groups related form elements together.
+	<legend>: Provides a caption for the fieldset. -->
+
+<!-- RESTRICTIONS  -->
+<input type="text" name="username" required />
+<input type="text" name="username" maxlength="10" />
+<input type="number" name="age" min="18" max="65" />
+<!--required: Ensures the field must be filled out. 
+    maxlength: Limits the maximum number of characters.
+    min and max: Sets a range for numerical input-->
+
+<!-- ANALYZING -->
+<!-- Analyzing Markup for Forms:
+
+When analyzing forms, look for:
+	1.	Proper use of form elements (input fields, labels, buttons).
+	2.	Use of form attributes like action, method, and name to control data submission.
+	3.	Accessibility features (like <label> with for, placeholders).
+	4.	Correct input types and restrictions to ensure valid data is submitted.
+	5.	Grouping related inputs with <fieldset> and <legend> where necessary for better structure. -->

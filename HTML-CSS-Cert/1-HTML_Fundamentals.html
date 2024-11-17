@@ -1,8 +1,16 @@
-<!-- 1. HTML Fundamentals 
-1.1 Construct markup that uses metadata elements • script, noscript, style, link, meta tags (encoding, keywords,
- viewport, and description) 
-1.2 Construct well-formed page markup • DOCTYPE declaration, html, head, body, proper syntax, closing tags and 
-commonly used symbols  -->
+<!-- 
+
+## 1. HTML Fundamentals
+
+### 1.1 Construct markup that uses metadata elements
+
+- `script`, `noscript`, `style`, `link`, `meta` tags (encoding, keywords, viewport, and description)
+
+### 1.2 Construct well-formed page markup
+
+- `DOCTYPE` declaration, `html`, `head`, `body`, proper syntax, closing tags, and commonly used symbols
+ 
+-->
 
 <!-- ------------------------------------------------------------------------------------------------------------------ -->
 <!-- ------------------------------------------------------------------------------------------------------------------ -->
@@ -46,6 +54,19 @@ commonly used symbols  -->
   Your browser does not support JavaScript or it is disabled.
 </noscript>
 
+<!-- 
+Further Notes
+	1.	meta Tags:
+	•	Keywords: largely deprecated in modern SEO practices. 
+	•	http-equiv: Useful for controlling browser behavior,such as <meta http-equiv="refresh" content="30"> to refresh the page 
+      every 30 seconds.
+	•	meta for robots: <meta name="robots" content="index, follow"> controls how search engines index a page. crucial for SEO.
+	2.	link Tag:
+	•	rel attribute:  used for other relationships like preloading fonts or resources, e.g., 
+        <link rel="preload" href="image.jpg" as="image">.
+
+-->
+
 <!-- ------------------------------------------------------------------------------------------------------------ -->
 <!-- ------------------------------------------------------------------------------------------------------------ -->
 
@@ -86,12 +107,16 @@ commonly used symbols  -->
 	•	Example: <div>Content goes here</div>, <p>This is a paragraph.</p>
 
 	• Generally, no closing tag needed if the element does not wrap content and is self-contained.
-	•	Example: <img src="image.jpg">, <br>
+	•	Example: <img src="image.jpg">, <br>, <input>
  -->
 
-<!-- Entities/ special characters -->
-<!-- Basic Entities:
+<!-- Entities/ special characters 
+ all can be written numerically such as  &#169; for copyright ©
 
+Common Entities:
+	•	Non-breaking space: &nbsp;
+	•	Section symbol: &sect;
+	•	Degree symbol: &deg;
  •	&lt;: Less than (<)
  •	&gt;: Greater than (>)
  •	&amp;: Ampersand (&)
@@ -108,3 +133,18 @@ Special Characters:
  •	&pound;: Pound sterling (£)
  •	&cent;: Cent symbol (¢)
  •	&dollar;: Dollar symbol ($) -->
+
+<!-- 
+ Further Notes:
+
+html Tag:
+    •	lang attribute:  critical for accessibility and internationalization.
+      helps screen readers and search engines understand the language of the content
+DOCTYPE:
+    •	not a normal HTML tag; just instruction to the browser.
+Best Practices:
+	•	Semantic HTML: You mentioned using semantic elements, but you could briefly introduce examples of semantic 
+    elements that are especially useful (like <main>, <aside>, <footer>, etc.) and explain that they improve 
+      accessibility and SEO.
+ 
+ -->

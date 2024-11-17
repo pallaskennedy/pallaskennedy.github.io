@@ -1,0 +1,112 @@
+<!-- 3. Document Structure using HTML 
+3.3 Construct and analyze markup that implements navigation 
+    • target, anchor (a href), bookmark, relative vs. absolute links, navigating simple folder hierarchies, map, area 
+ -->
+
+<!-- ------------------------------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------------------------------------------------ -->
+<!-- Anchor Tag (<a href="">)
+	used to create hyperlinks, allowing navigation between pages or sections of a website -->
+<a href="https://www.example.com">Visit Example</a>
+
+<!-- Relative Links
+	Reference resources within the same website or directory.
+	Used when linking to other pages or assets on the same site (e.g., HTML files, images, CSS). 
+    More flexible; works within the same domain or folder structure.-->
+<a href="about.html">About Us</a>
+
+<!-- Absolute Links
+	Reference a complete URL that includes the protocol and domain name.
+	Used when linking to external websites or resources. 
+    Directly links to external resources, independent of the current directory or site structure.-->
+<a href="https://www.example.com">Go to Example</a>
+
+<!-- Bookmark Links (Anchor Links):
+	Used to create links to specific sections within the same webpage.
+	Commonly used for internal navigation within a single page, linking to a specific part of 
+    the page by referencing an id attribute of an element.
+    When clicked, the browser scrolls to the element with the corresponding id.-->
+<a href="#section1">Go to Section 1</a>
+...
+<h2 id="section1">Section 1</h2>
+
+<!-- Navigating Folder Hierarchies:
+    When working with multiple pages and directories, it’s important to know how to link between files 
+    in different folders. -->
+<a href="folder/about.html">RELATIVE: get to a page in a subfolder</a>
+<a href="../contact.html"
+  >RELATIVE: to link to a page in the parent directory</a
+>
+<a href="../images/gallery.html"
+  >RELATIVE: To get to a page in an adjacent directory</a
+>
+<!-- Best Practices:
+	•	Keep paths simple and organized.
+	•	Use ../ to go up one level and avoid absolute paths for internal links, making it easier to move 
+    the website structure.
+ -->
+
+<!-- <map> and <area> Tags for Image Mapping:
+	Allow you to make different areas of an image clickable, each linking to a different location or resource.
+        Attributes:
+            shape: Defines the shape of the clickable area (rect, circle, poly).
+            coords: Defines the coordinates of the area, varying based on the shape.
+            alt: Provides alternative text for the area, important for accessibility.
+            href: Specifies the link destination.-->
+<img src="image.jpg" usemap="#image-map" />
+<map name="image-map">
+  <area
+    shape="rect"
+    coords="34,44,270,350"
+    alt="Computer"
+    href="computer.html"
+  />
+  <area shape="circle" coords="500,150,60" alt="Phone" href="phone.html" />
+</map>
+
+<!-- <nav>
+    Use meaningful and descriptive link text for clarity and accessibility.
+    The <nav> element should be used to wrap major navigation sections like menus or links that help users 
+        navigate the website. -->
+
+<!-- Accessibility Considerations:
+	Use clear text for links that describes where they will take the user.
+	Ensure that keyboard users can navigate through the links, and visually indicate which link is 
+        currently selected.
+	Target Attribute (target="_blank")opens the linked page in a new tab or window and is used when linking 
+        to external resources, so users don’t navigate away from the current page. -->
+
+<!-- “analyze markup that implements navigation,” 
+    Check if links are properly implemented using the <a> tag and if the href attribute is correctly 
+        pointing to either relative or absolute paths, internal sections (using bookmarks), or 
+        external websites.
+    Verify if navigation sections are wrapped with semantic elements like <nav>, which clearly define 
+        navigation areas in the markup. 
+    Analyze whether relative links (links within the same website) and absolute links (links to 
+        external websites) are used correctly.
+    Review if links are correctly referencing paths within folder structures. Ensure that the 
+        paths are correct when navigating between pages in different directories or folders.
+    If the page includes clickable image maps, analyze whether the <map> and <area> tags are implemented 
+        properly. This would involve checking if the shapes, coordinates, and links are defined correctly.
+    Review if the target="_blank" attribute is used where necessary, particularly when linking to external 
+        sites, to ensure the user does not leave the current website unintentionally.
+    Ensure that link text is descriptive and makes sense contextually, improving both accessibility and 
+        SEO. For example, instead of generic phrases like “Click here,” use meaningful descriptions like 
+        “Learn more about our services.”
+    Ensure that the navigation markup is accessible. This might include:
+        •	Using meaningful link text.
+        •	Ensuring that navigation is keyboard-friendly (e.g., tabbing through links).
+        •	Including aria-label or role="navigation" attributes to help screen readers.
+        •	Providing visible focus indicators when links are clicked or tabbed through.
+    Verify that the navigation structure is clear and consistent across the website, making it easy for 
+        users to find their way around. This might involve checking:
+        •	The use of <nav> for major navigation sections.
+        •	Grouping related links within <ul>, <ol>, or <div> elements, with appropriate <li> tags for each 
+            item. 
+    Check if the navigation is responsive, ensuring that it works well on both desktop and mobile devices. 
+    This may involve:
+        •	Reviewing the use of a mobile-first approach with appropriate media queries.
+        •	Ensuring the navigation is easily accessible on smaller screens (e.g., via a hamburger menu). 
+    Ensure there are no broken links or incorrect paths that lead to “404 Not Found” errors.
+    Test all links to confirm they navigate correctly and lead to the intended destinations.
+    -->
