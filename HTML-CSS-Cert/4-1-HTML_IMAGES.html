@@ -1,0 +1,58 @@
+<!-- ## 4. Multimedia Presentation using HTML
+### 4.1 Construct and analyze markup that displays images
+- `img` and `picture` elements and their attributes-->
+
+<!-- ------------------------------------------------------------------------------------------------------- -->
+<!-- IMAGES  -->
+<img
+  src="image.jpg"
+  alt="Description"
+  width="300"
+  height="200"
+  loading="lazy"
+/>
+<img
+  src="image-small.jpg"
+  srcset="image-large.jpg 1024w, image-medium.jpg 640w, image-small.jpg 320w"
+  sizes="(min-width: 1024px) 1024px, (min-width: 640px) 640px, 320px"
+  alt="Responsive Image"
+/>
+<!-- <img> primary way; empty (self-closing) tag -->
+<!-- src (source): Specifies the relative path or an absolute URL -->
+<!-- 	alt (alternative text): descriptive text if the image fails to load, used by screen readers 
+        for accessibility, and for SEO; best practice to include -->
+<!-- width and height: in pixels or percentages; prevents layout shifts during loading. -->
+<!-- loading: control loading behavior (lazy loading).
+	•	lazy: Defers loading the image until it’s near the viewport (improves page load speed).
+	•	eager: Loads the image immediately. -->
+<!-- srcset and sizes Attributes (for responsive images):
+	•	srcset: Provides multiple image options based on screen size or pixel density. 
+	•	sizes: Defines the display size of the image in different conditions -->
+
+<picture>
+  <source srcset="image-large.jpg" media="(min-width: 800px)" />
+  <source srcset="image-small.jpg" media="(max-width: 799px)" />
+  <img src="fallback.jpg" alt="Fallback Image" />
+</picture>
+<!-- <picture> displays image based on the device or screen size, enabling responsive images.  -->
+<!-- <source> Element:
+	•	Defines multiple image sources for different conditions (like screen width or pixel density).
+	•	srcset: Specifies the image file and size (or pixel density).
+	•	media: Uses media queries to define when a particular source should be used (e.g., screen width or resolution). -->
+<!-- <img> Element (Fallback/Default):
+	•	Acts as a fallback if none of the <source> conditions are met or the browser doesn’t support <picture>. -->
+
+<!-- ------------------------------------------------------------------------------------------------------------------------- -->
+<!-- When analyzing image markup, consider the following:
+	1.	Accessibility:
+	•	Is the alt attribute present and descriptive?
+	•	Does the image contribute meaningfully to the content, or is it decorative? If it’s decorative, consider 
+		setting alt="" to skip it for screen readers.
+	2.	Responsiveness:
+	•	Is the image optimized for different devices using the <picture> element or srcset/sizes attributes?
+	•	Does the markup cater to high-density (retina) displays with higher resolution images?
+	3.	Performance:
+	•	Are images being lazy-loaded using loading="lazy"?
+	•	Are large image files avoided, and are appropriate image formats (e.g., WebP) used for performance improvements?
+	4.	SEO:
+	•	Is the alt attribute descriptive and keyword-rich where relevant to improve search engine indexing? -->

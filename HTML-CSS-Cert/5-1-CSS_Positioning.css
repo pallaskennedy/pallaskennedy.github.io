@@ -1,0 +1,163 @@
+/* 5.1 Construct and analyze styles that position content
+- Positioning (`float`, `relative`, `absolute`, `static`, and `fixed`), max-width, overflow, 
+height, width, align, display, inline vs. block, visibility, box model, margins and padding */
+/* --------------------------------------------------------------------------------------------- */
+/* POSITION */
+div {
+  position: static;
+}
+/* static is the default; Elements are positioned according to the normal document flow. 
+The element stays where it is in the document flow, with no special positioning. No top, 
+left, right, or bottom properties are applied. */
+
+div {
+  position: relative;
+  top: 10px;
+  left: 20px;
+}
+/* relative : The element is positioned relative to its normal position in the document flow.
+You can use top, left, right, or bottom properties to move it from its original position,  but 
+the space it originally occupies is still preserved.  */
+
+div {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+/* absolute: The element is positioned relative to its nearest positioned ancestor (an element 
+with position other than static). If no ancestor is positioned, it is positioned relative to 
+the initial containing block (the viewport). Removed from the document flow, so it does not 
+affect the position of other elements. */
+div {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+/*  fixed: The element is positioned relative to the viewport (browser window) and remains 
+fixed even when the page is scrolled.	It is removed from the document flow. */
+
+div {
+  position: sticky;
+  top: 0; /* Element becomes fixed after scrolling past 0px from the top */
+}
+/* sticky: 	The element toggles between relative and fixed positioning depending on the user’s
+ scroll position. The element behaves like it’s relative until the scroll reaches a defined point,
+then it becomes fixed. */
+
+/* --------------------------------------------------------------------------------------------- */
+/* FLOAT  */
+img {
+  float: right;
+}
+/*  float: 	Moves an element to the left or right within its container, allowing other elements 
+(typically text) to wrap around it. Typically used for creating text wrapping around images or 
+floated layouts.
+ */
+
+/* --------------------------------------------------------------------------------------------- */
+/*  DISPLAY PROPERTIES */
+div {
+  display: block;
+}
+/* block:	The element takes up the full width available, and each block-level element starts on a new line. */
+
+span {
+  display: inline;
+}
+/* inline: The element takes up only as much width as necessary and does not force a line break. */
+
+img {
+  display: inline-block;
+  width: 150px;
+  height: auto;
+}
+/* inline-block: The element behaves like an inline element (doesn’t break the line) but can have a width, 
+height, margins, and padding. */
+
+div {
+  display: none;
+}
+/* none: The element is completely removed from the document layout (invisible and doesn’t take up space). */
+/* --------------------------------------------------------------------------------------------- */
+/* VISIBILITY */
+div {
+  visibility: hidden;
+}
+/* The visibility property controls whether an element is visible or hidden. Unlike display: none, 
+hidden elements using visibility: hidden still take up space in the document flow.
+	•	visible is the default; the element is visible.
+	•	hidden: The element is invisible, but it still occupies space in the layout. */
+
+/* --------------------------------------------------------------------------------------------- */
+/* WIDTH, HEIGHT, MAX-WIDTH */
+div {
+  width: 300px;
+  height: 200px;
+}
+/* width and height: Set the width and height of an element. */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* max-width: Limits the maximum width an element can take, often used for responsive designs to 
+prevent elements from growing too large on wide screens. */
+
+/* --------------------------------------------------------------------------------------------- */
+/* OVERFLOW */
+div {
+  width: 200px;
+  height: 100px;
+  overflow: scroll;
+}
+
+/*The overflow property controls what happens when content overflows an element’s box:
+	1.	visible (default): Content spills out of the box.
+	2.	hidden: Content that overflows is hidden.
+	3.	scroll: Scrollbars are added to allow the user to scroll the overflowing content.
+	4.	auto: Scrollbars are added only if necessary.  */
+
+/* --------------------------------------------------------------------------------------------- */
+/* ALIGNING ELEMENTS */
+div {
+  text-align: center;
+}
+/* text-align handles the horizontal alignment of inline or block-level elements, including text and
+images, within their container. */
+
+img {
+  vertical-align: middle;
+}
+/* vertical-align is used to vertically align inline or table-cell elements. */
+/* --------------------------------------------------------------------------------------------- */
+/*  BOX MODEL */
+/* The CSS box model is fundamental for layout and positioning. Every element on a page is 
+represented as a box, which consists of four parts:
+	1.	Content: The actual content inside the box (e.g., text, images).
+	2.	Padding: Space between the content and the border. It is inside the element’s background.
+	3.	Border: The border that surrounds the padding (if any).
+	4.	Margin: Space outside the border, between this element and others. */
+div {
+  width: 200px;
+  padding: 10px;
+  border: 5px solid black;
+  margin: 20px;
+}
+/* All sides the same */
+div {
+  margin: 10px;
+}
+
+/* Different values for top, right, bottom, left */
+div {
+  margin: 10px 20px 15px 5px;
+}
+
+/* --------------------------------------------------------------------------------------------- */
+/* When analyzing layout and positioning, consider:
+	Is the content properly positioned using the correct position values (relative, absolute, fixed, etc.)?
+	Are elements aligned as expected using text-align, vertical-align, or flexbox/grid for more complex layouts?
+	Are the margins, padding, and borders contributing to the desired layout and spacing?
+	Is overflow managed appropriately for elements with more content than space allows?
+	Are properties like max-width, flexible display values, and media queries used to ensure the page works 
+  across different devices and screen sizes? */
