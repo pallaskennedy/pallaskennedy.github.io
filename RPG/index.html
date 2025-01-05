@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RPG - Dragon Repeller</title>
-    <link href="styles.css" rel="stylesheet">
-</head>
-<body>
-  <div id="game"></div>
-  <source src="script.js"></script>    
-</body>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Guardian of the Realm</title>
+  </head>
+  <body>
+    <div id="game">
+      <img src="town-612x612.jpg" alt="Player Location" class="image" />
+      <div id="stats">
+        <span class="stat">XP: <strong><span id="xpText">0</span></strong></span>
+        <span class="stat">Health: <strong><span id="healthText">100</span></strong></span>
+        <span class="stat">Gold: <strong><span id="goldText">50</span></strong></span>
+      </div>
+      <div id="controls">
+        <button id="button1">Go to store</button>
+        <button id="button2">Go to cave</button>
+        <button id="button3">Fight dragon</button>
+      </div>
+      <div id="monsterStats">
+        <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
+        <span class="stat">Level: <strong><span id="monsterLevelText"></span></strong></span>
+        <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
+      </div>
+      <div id="text">
+        Welcome, Guardian of the Realm. <br> <br> Your goal is to defeat the dragon threatening the town.  You can skill up fighting monsters in the cave.  You can upgrade your weapon and health in the store. You are in the town square. <br> <br> What do you want to do? 
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
