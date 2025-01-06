@@ -24,15 +24,15 @@
     <title>Jill Kennedy | Teacher</title>
 
     <!-- Styling  -->
-     <!-- this stylesheet is ued to import the social media icons only -->
+    <!-- this stylesheet is ued to import the social media icons only -->
     <link
     rel="stylesheet"
     href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-  />
+    />
 
-  <!-- my styling  -->
-    <link rel="stylesheet" href="Styling/styles.css" />
-    <link rel="stylesheet" href="Styling/index_styling.css" />
+   <!-- my styling  -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="index/index_styling.css" />
 
   </head>
   <body>
@@ -55,26 +55,39 @@
     <nav>
       <ul class="nav-menu">
         <li>
-          <a href="#">Profile</a>
+          <a href="#">Profile Pages</a>
           <ul class="dropdown">
             <li>
               <a href="AboutMe/about.html" target="_blank">About Me</a>
             </li>
-            
+            <li>
+              <a href="history/myTimeline.html" target="_blank">Timeline</a>
+            </li>
+            <li>
+              <a href="cats/cat_photo_gallery.html" target="_blank">My Cats</a>
+            </li>
           </ul>
         </li>
         <li>
-          <a href="#">Projects</a>
+          <a href="#">School Stuff</a>
+          <ul class="dropdown">
+            <li>
+              <a href="class-procedures/KennedysProcedures.html" target="_blank">Classroom Procedures</a>
+            </li>
+            <li>
+              <a href="Procedures-Game/procedure_game.html" target="_blank">Procedures Games</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">My Silly Projects</a>
           <ul class="dropdown">
             <li>
               <a href="DiceGame/index.html" target="_blank">Dice Game - 2 player</a>
             </li>
             <li><a href="NumberGuessGame/index.html" target="_blank">Guess the Number</a></li>
             <li>
-              <a href="RPG/index.html" target="_blank">Guardian of the Realm</a>
-            </li>
-            <li>
-              <a href="Procedures-Game/procedure_game.html" target="_blank">Procedures Games</a>
+              <a href="RPG/index.html" target="_blank">Defender of the Realm</a>
             </li>
           </ul>
         </li>
@@ -83,12 +96,16 @@
 
     <!-- ----- MAIN CONTENT ------  -->
     <main class="main">
+
+
+      
       <div class="philosophy">
-        <!-- Grid: philosophy flex boxes -->
+        
         <div class="pg-title-box">
           <span class="pg-title-text">Philosophy</span>
         </div>
-      
+
+        <!-- Grid: philosophy flex boxes -->
         <div class="philosophy-grid">
           <div class="pg-quote-box pg-color1">
             <h3>Ignite</h3>
@@ -126,13 +143,13 @@
             <div class="cube">
               <div class="front">
                 <img
-                  src="images/Teaching-Cert.jpeg"
+                  src="index/Teaching-Cert.jpeg"
                   alt="State of Arizona Teaching Certification"
                 />
               </div>
               <div class="back">
                 <img
-                  src="images/Python.png"
+                  src="index/Python.png"
                   alt="Information Technology Specialist Python Programming Certification from Certiport "
                 />
               </div>
@@ -140,13 +157,13 @@
               <div class="bottom">bottom</div>
               <div class="left">
                 <img
-                  src="images/Data-analytics.png"
+                  src="index/Data-analytics.png"
                   alt="Information Technology Specialist Data Analytics Certification from Certiport"
                 />
               </div>
               <div class="right">
                 <img
-                  src="images/Computational-Thinking.png"
+                  src="index/Computational-Thinking.png"
                   alt="Information Technology Specialist Computational Thinking Certification from Certiport"
                 />
               </div>
@@ -165,6 +182,7 @@
         </div>
         <!--  End ASCII Art  -->
 
+        
         <!-- Animated box -->
   
     <div class="animated-box">
@@ -195,20 +213,20 @@
       <h1 class="color-change">g</h1>
 
     </div>
-    
-    
-    <!-- End message from bhagyesh nimbalkar-->
+    <!-- End animated box-->
 
 
-        <!-- Message from Albert Einstein -->
-        <div class="AEQuote">
-          <p style="font-size: 24px;">
-            "Make it as simple as possible, but not simpler."
-          </p>
-          <p>Albert Einstein</p>
-        </div>
-        <!-- End message from Albert Einstein -->
-      </div>
+    <!-- Message from Albert Einstein -->
+    <div class="AEQuote">
+      <p style="font-size: 24px;">
+        "Make it as simple as possible, but not simpler."
+      </p>
+      <p>Albert Einstein</p>
+    </div>
+    <!-- End message from Albert Einstein -->
+
+
+    </div>
     </main>
 
     <!-- ------- FOOTER --------  -->
@@ -217,21 +235,10 @@
 
       <!-- Web Presence Icons -->
       <div class="social-media">
+        
         <div class="social-icons">
-          <a href="https://www.facebook.com/jill.kennedy.77" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://www.instagram.com/pallaskennedy/" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
           <a href="https://www.linkedin.com/in/pallas-kennedy-a0aa9771/" target="_blank">
             <i class="fab fa-linkedin-in"></i>
-          </a>
-          
-          <a href="https://www.pinterest.com/pallaskennedy/" target="_blank">
-            <i class="fab fa-pinterest"></i>
-          </a>
-         
           </a>
           <a href="https://github.com/pallaskennedy" target="_blank">
             <i class="fab fa-github"></i>
@@ -239,13 +246,23 @@
           <a href="https://www.codewars.com/users/EVITTeacherSaAD" target="_blank">
             <i class="fab fa-codepen"></i>
           </a>
+          <a href="https://www.facebook.com/jill.kennedy.77" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/pallaskennedy/" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.pinterest.com/pallaskennedy/" target="_blank">
+            <i class="fab fa-pinterest"></i>
+          </a>
+        
         </div>
       </div>
       <!-- End Web Presence Icons -->
 
       <div class="separator"></div>
     </footer>
-    <script src="../Functionality/index_script.js"></script>
+    <script src="index/index_script.js"></script>
   </body>
 </html>
 

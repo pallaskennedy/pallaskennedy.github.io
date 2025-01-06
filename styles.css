@@ -1,0 +1,210 @@
+/*----- Global Reset/Normalize Styles --------------------------------------------------------------------------------*/
+
+/* CSS Reset - Removes all browser default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding & borders are included in element width/height */
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%; /* Ensure the body takes up full height */
+  font-size: 16px; /* Base font size */
+  font-family: "Open Sans", Arial, sans-serif; /* Default font family */
+}
+
+/* Normalize Styles - Provides a consistent look across browsers */
+body {
+  line-height: 1.6; /* Set a common line height */
+  color: #fff; /* Default text color */
+  background-color: #555; /* Default background color */
+}
+
+/* Ensures that images scale properly */
+img {
+  max-width: 100%;
+  height: auto; /* Keep aspect ratio */
+  display: block; /* Remove bottom spacing in some browsers */
+}
+
+/* Ensures links are styled consistently */
+a {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Use the same color as surrounding text */
+}
+
+/* Normalize for lists */
+ul,
+ol {
+  list-style: none; /* Remove bullet points from lists */
+}
+
+/* Normalize for buttons */
+button {
+  background: none;
+  border: none; /* Remove button borders */
+  padding: 0;
+  font: inherit; /* Use the same font as the rest of the text */
+  cursor: pointer; /* Cursor pointer for clickable elements */
+}
+
+/* Forms */
+input,
+select,
+textarea,
+button {
+  font-family: inherit; /* Make form elements inherit the font */
+  font-size: inherit; /* Make form elements inherit the font size */
+  border: 1px solid #ccc; /* Light gray borders */
+  padding: 0.5rem; /* Add some padding */
+  border-radius: 4px; /* Rounded corners for inputs */
+}
+
+textarea {
+  resize: vertical; /* Only allow vertical resizing */
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold; /* Ensure bold headings */
+  line-height: 1.25; /* Consistent heading spacing */
+}
+
+/* Tables */
+table {
+  border-collapse: collapse; /* Collapse table borders */
+  width: 100%; /* Make tables take up full width */
+}
+
+th,
+td {
+  padding: 0.75rem; /* Add padding to table cells */
+  text-align: left; /* Align text to the left */
+}
+
+/* Block elements margin reset */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+blockquote {
+  margin-bottom: 1.5rem; /* Add consistent spacing between block elements */
+}
+
+/*----- Branding styling ---------------------------------------------------------------------------------------------*/
+
+/* Branding styling */
+.header {
+  padding: 32px;
+  background-color: #333;
+  border-bottom: 3px solid #5f5757;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+.header h1 {
+  margin-bottom: 0.5rem;
+}
+.header p {
+  margin-top: 0.5rem;
+  font-weight: 400;
+}
+.main {
+  /* background: #555; */
+  font-family: "Lucida Grande", "Lucida Sans Unicode", verdana, lucida,
+    helvetica, sans-serif;
+  /* margin: 0px;
+  padding: 0px; */
+  /* color: #e0e0e0; */
+  margin: 30px;
+  padding: 25px;
+  border-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: #e0e0e0;
+  color: #555;
+}
+.footer {
+  background-color: #444;
+  border-top: 3px solid #5f5757;
+  border-bottom: 5px solid #fff;
+  align-items: center;
+  padding: 10px;
+}
+.footer a {
+  color: #ddd; /* Match text color for consistency */
+}
+.footer p {
+  color: #bbb;
+}
+
+.separator {
+  border-top: 2px solid #ccc;
+  margin: 20px 0;
+  height: 0;
+}
+
+.breadcrumb {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  background-color: transparent; /* remove if you don't need */
+}
+
+.breadcrumb-item {
+  display: inline;
+  font-size: 0.875em;
+}
+
+.breadcrumb-item a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+.breadcrumb-item::after {
+  content: " > ";
+  color: #6c757d;
+}
+
+.breadcrumb-item:last-child::after {
+  content: none;
+}
+
+.breadcrumb-item.active a {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: default;
+}
+/*------- Page Specific Styling --------------------------------------------------------------------------------------*/
+
+/* 2.   Global Styles: Not layout, not component, not utility       */
+/* 3.   Layout Styles: Framework and Structure Styling       */
+/* 4.   Component Styles: UI Element Styling              */
+/* 5.   Utility Classes: Class and ID styling             */
+/* 6.   Media Queries (Optional): Apply different styles based on the screen size.        */
+
+/* CSS */
+/* Positioning */
+/* Box Model */
+/* Flexbox/Grid */
+/* Typography */
+/* Backgrounds */
+/* Effects and Transitions */
+/* Miscellaneous */

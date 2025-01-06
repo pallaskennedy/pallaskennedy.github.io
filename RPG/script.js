@@ -1,3 +1,12 @@
+// How are you losing zero healt points failing to dodge the dragon?
+// Dragon attack is dealing zero damage
+// Put a cap on the gypsy
+// Need something after winning the game other than return to town.
+// limit to health?
+// Dragon scales with player's health and xp
+// Need demon lords to fight after the dragon
+// Turn gypsy into a chest with unlock or pickloc chance  (this beast was protecting a chest)
+
 'use strict';
 
 let xp = 0;
@@ -25,24 +34,6 @@ const weapons = [
   { name: 'claw hammer', power: rand(50)},
   { name: 'sword', power: rand(100) }
 ];
-
-// const monsters = [
-//   {
-//     name: "slime",
-//     level: rand(4),
-//     health: rand(100),
-//   },
-//   {
-//     name: "fanged beast",
-//     level: rand(10),
-//     health: rand(200),
-//   },
-//   {
-//     name: "dragon",
-//     level: rand(25),
-//     health: rand(300),
-//   }
-// ]; 
 
 
 // Only the Dragon doesn't change
